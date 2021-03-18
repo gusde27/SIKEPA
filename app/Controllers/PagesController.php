@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\UserModel;
+
 class PagesController extends BaseController
 {
 	//======= Login/Logout Sistem Informasi ========
@@ -14,12 +16,13 @@ class PagesController extends BaseController
 
     public function loginPOST()
     {
-        $pts = new UserModel();
+        $user = new UserModel();
         
         $pass = $this->request->getVar('password');
+		$username = $this->request->getVar('username');
         
-        $cek = $pts->select('id, username, password, nama, jenis, slug, level')->where([
-            'username' => $this->request->getVar('username')
+        $cek = $user->select('id, nama, username, password, level')->where([
+            'username' => $username
         ])->get()->getResultArray();
 
         //password_verify($pass, $cek[0]['password'])
@@ -28,20 +31,16 @@ class PagesController extends BaseController
             session()->setFlashdata('pesan', 'Username Anda Salah!');
 
             return redirect()->back();
+			
         } elseif(password_verify($pass, $cek[0]['password'])) {
-            $dataSession = [
+            
+			$dataSession = [
                 'id' => $cek[0]['id'],
-                'nama_pts' => $cek[0]['nama'],
-                'slug' => $cek[0]['slug'],
-                'password' => $cek[0]['password'],
-                'jenis_pts' => $cek[0]['jenis'],
-                'level' => $cek[0]['level']
+                'nama' => $cek[0]['nama']
             ];
             session()->set($dataSession);
 
-            if (session()->get('level') == "pts") {
-                return redirect()->to('dashboard');
-            } elseif (session()->get('level') == "admin") {
+            if (session()->get('level') == "admin") {
                 return redirect()->to('dashboard-admin');
             }
             
