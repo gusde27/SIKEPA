@@ -36,6 +36,11 @@ $routes->setAutoRoute(true);
 //for previuos page
 $routes->get('/back', 'PagesController::back');
 
+// Login/Logout
+$routes->post('/loginPOST', 'PagesController::loginPOST');
+$routes->post('/logout', 'PagesController::logout');
+
+
 //Pages Routes
 $routes->get('/', 'PagesController::index');
 $routes->get('/struktur-organisasi', 'PagesController::struktur_organisasi');

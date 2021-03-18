@@ -22,9 +22,38 @@ a:hover {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Raleway", sans-serif;
 }
+
+/* CSS TAMBAHAN UNTUK MODAL LOGIN */
+.vertical-alignment-helper {
+  display: table;
+  height: 100%;
+  width: 100%;
+  pointer-events: none; /* This makes sure that we can still click outside of the modal to close it */
+}
+.vertical-align-center {
+  /* To center vertically */
+  display: table-cell;
+  vertical-align: middle;
+  pointer-events: none;
+}
+.modal-content {
+  /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+  width: inherit;
+  max-width: inherit; /* For Bootstrap 4 - to avoid the modal window stretching full width */
+  height: inherit;
+  /* To center horizontally */
+  margin: 0 auto;
+  pointer-events: all;
+}
+/* END CSS TAMBAHAN UNTUK MODAL LOGIN */
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -89,7 +118,8 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 2px;
 }
 
-#header .logo h1 a, #header .logo h1 a:hover {
+#header .logo h1 a,
+#header .logo h1 a:hover {
   color: #5777ba;
   text-decoration: none;
 }
@@ -104,7 +134,8 @@ h1, h2, h3, h4, h5, h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Desktop Navigation */
-.nav-menu, .nav-menu * {
+.nav-menu,
+.nav-menu * {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -126,7 +157,9 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Open Sans", sans-serif;
 }
 
-.nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
+.nav-menu a:hover,
+.nav-menu .active > a,
+.nav-menu li:hover > a {
   color: #5777ba;
   text-decoration: none;
 }
@@ -177,7 +210,9 @@ h1, h2, h3, h4, h5, h6 {
   color: #233355;
 }
 
-.nav-menu .drop-down ul a:hover, .nav-menu .drop-down ul .active > a, .nav-menu .drop-down ul li:hover > a {
+.nav-menu .drop-down ul a:hover,
+.nav-menu .drop-down ul .active > a,
+.nav-menu .drop-down ul li:hover > a {
   color: #5777ba;
 }
 
@@ -272,7 +307,9 @@ h1, h2, h3, h4, h5, h6 {
   outline: none;
 }
 
-.mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
+.mobile-nav a:hover,
+.mobile-nav .active > a,
+.mobile-nav li:hover > a {
   color: #5777ba;
   text-decoration: none;
 }
@@ -340,7 +377,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero::before {
-  content: '';
+  content: "";
   position: absolute;
   right: -100%;
   top: 20%;
@@ -589,7 +626,8 @@ section {
   overflow: hidden;
 }
 
-.gallery .owl-nav, .gallery .owl-dots {
+.gallery .owl-nav,
+.gallery .owl-dots {
   margin-top: 40px;
   text-align: center;
 }
@@ -669,7 +707,8 @@ section {
   margin: 0;
 }
 
-.testimonials .testimonial-item .quote-icon-left, .testimonials .testimonial-item .quote-icon-right {
+.testimonials .testimonial-item .quote-icon-left,
+.testimonials .testimonial-item .quote-icon-right {
   color: #e8ecf5;
   font-size: 26px;
 }
@@ -692,7 +731,8 @@ section {
   margin: 15px auto 15px auto;
 }
 
-.testimonials .owl-nav, .testimonials .owl-dots {
+.testimonials .owl-nav,
+.testimonials .owl-dots {
   margin-top: 5px;
   text-align: center;
 }
@@ -882,7 +922,8 @@ section {
   color: #b1c0df;
 }
 
-.faq .accordion-list .icon-show, .faq .accordion-list .icon-close {
+.faq .accordion-list .icon-show,
+.faq .accordion-list .icon-close {
   font-size: 24px;
   position: absolute;
   right: 0;
@@ -1010,13 +1051,15 @@ section {
   color: #8a8c95;
 }
 
-.contact .php-email-form input, .contact .php-email-form textarea {
+.contact .php-email-form input,
+.contact .php-email-form textarea {
   border-radius: 0;
   box-shadow: none;
   font-size: 14px;
 }
 
-.contact .php-email-form input::focus, .contact .php-email-form textarea::focus {
+.contact .php-email-form input::focus,
+.contact .php-email-form textarea::focus {
   background-color: #5777ba;
 }
 
@@ -1244,7 +1287,8 @@ section {
 }
 
 @media (max-width: 768px) {
-  #footer .copyright, #footer .credits {
+  #footer .copyright,
+  #footer .credits {
     float: none;
     text-align: center;
     padding: 5px 0;

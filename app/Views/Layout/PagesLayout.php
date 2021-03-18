@@ -57,12 +57,42 @@
                     <li><a href="/pelayanan">Pelayanan</a></li>
                     <li><a href="/faq">F.A.Q</a></li>
 
-                    <li class="get-started"><a href="#features">Masuk</a></li>
+                    <li class="get-started"><a href="#login" data-toggle="modal" data-target="#LoginModal">Masuk</a>
+                    </li>
                 </ul>
             </nav><!-- .nav-menu -->
 
         </div>
     </header><!-- End Header -->
+
+    <!-- ======= Login Modal ======= -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog vertical-align-center" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5>ADMIN SIKEPA</h5>
+                        <button type=" button btn-sm" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <!-- Isi Modal -->
+                    <div class="modal-body">
+
+                    </div>
+                    <!-- End Isi Modal -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary btn-sm">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ======= End Login Modal ======= -->
 
     <!-- ======= Main ======= -->
     <?php $this->renderSection('content') ?>
