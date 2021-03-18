@@ -40,7 +40,6 @@ $routes->get('/back', 'PagesController::back');
 $routes->post('/loginPOST', 'PagesController::loginPOST');
 $routes->post('/logout', 'PagesController::logout');
 
-
 //Pages Routes
 $routes->get('/', 'PagesController::index');
 $routes->get('/struktur-organisasi', 'PagesController::struktur_organisasi');
@@ -49,6 +48,11 @@ $routes->get('/pelayanan', 'PagesController::pelayanan');
 $routes->get('/faq', 'PagesController::faq');
 //End Pages Routes
 
+//Admin Routes
+$routes->get('/dashboard', 'AdminController::Dashboard');
+$routes->get('/pelayanan-admin', 'AdminController::pelayanan_admin');
+$routes->get('/artikel-admin', 'AdminController::artikel_admin');
+//End Admin Routes
 
 
 /*
