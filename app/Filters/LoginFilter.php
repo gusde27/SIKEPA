@@ -12,10 +12,11 @@ class LoginFilter implements FilterInterface
     {
         if (session()->get('level') == 'admin') {
             return redirect()->back();
-        } 
+        }
     }
 
     public function after(RequestInterface $request, ResponseInterface $response)
     {
+        //do something
     }
 }
