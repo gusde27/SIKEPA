@@ -23,7 +23,7 @@
         <div class="container">
 
             <div class="section-title">
-                <h3>Susunan Organisasi</h3>
+                <h2>Susunan Organisasi</h2>
             </div>
 
             <p>
@@ -41,14 +41,6 @@
                 <li>Babinsa : 1 Orang</li>
             </ul>
             </p>
-
-            <form role="form">
-                <div class="form-group">
-                    <label for="inputsm">input-sm</label>
-                    <input class="form-control form-control-sm input-sm" id="inputsm" type="text">
-                </div>
-                <button type="submit" class="btn btn-sm btn-primary">Submit</button>
-            </form>
 
         </div>
     </section>

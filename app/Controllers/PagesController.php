@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
+use App\Models\ArtikelModel;
+use App\Models\PelayananModel;
 
 class PagesController extends BaseController
 {
@@ -36,12 +38,13 @@ class PagesController extends BaseController
             
 			$dataSession = [
                 'id' => $cek[0]['id'],
-                'nama' => $cek[0]['nama']
+                'nama' => $cek[0]['nama'],
+                'level' => $cek[0]['level']
             ];
             session()->set($dataSession);
 
             if (session()->get('level') == "admin") {
-                return redirect()->to('dashboard-admin');
+                return redirect()->to('dashboard');
             }
             
 

@@ -34,23 +34,79 @@
         <div class="container">
 
             <div class="section-title">
-                <h2>Visi</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-                    fugiat
-                    sit in iste officiis commodi quidem hic quas.</p>
+                <h2>Profil</h2>
+                <p>
+                    Sejarah Kelurahan Pagesangan dari zaman Pemerintahan Desa pada tahun 1969 sampai dengan 1980 yang
+                    mana dulunya bernama Desa yang dipimpin oleh seorang kepala desa yang pertama bernama Sahman, Kedua
+                    H. Abdul Jalil, Ketiga Suhaeli dan ke Empat Drs.H.Lalu Halil,dan pada tahun 1981 terbentuklah
+                    Pemerintahan Kota Administratip Kota Mataram dengan perubahan Desa menjadi kelurahan yang dipimpin
+                    seorang lurah pertama bernama Suhaeli dan yang kedua Drs. H.Lalu halil dengan 14 Kampung. pada tahun
+                    2007 berdasarkan Peraturan Walikota Nomor : 18/PERT/2007 tentang Pemekaran Kecamatan dan Kelurahan
+                    di Kota Mataram, dan kecamatan Mataram membawahi 9 Kelurahan, Kelurahan Pagesangan sebagai kelurahan
+                    Induk Lurahnya bernama Drs. I Made Gede Yasa.MM sampai dengan Tahun 2016 terjadi pergantian Lurah
+                    Ida Bagus Made Ariawan,S.STP. Adanya pemekaran wilayah ini dimaksudkan untuk efektifitas pelayanan
+                    masyarakat dan mempermudah didalam melaksanakan program-program Pemerintah Daerah didalam hal
+                    Pemberdayaan Masyarakat yang meliputi bidang politik, ekonomi, sosial budaya, dan lingkungan hidup,
+                    Penyelenggaraan ketentraman dan ketertiban umum, serta Pemeliharaan prasarana dan fasilitas
+                    pelayanan umum.
+                </p>
             </div>
 
-            <div class="section-title">
-                <h2>Misi</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-                    fugiat
-                    sit in iste officiis commodi quidem hic quas.</p>
-            </div>
 
         </div>
     </section><!-- End Visi Misi Section -->
+
+    <!-- ======= Details Section ======= -->
+    <section id="details" class="details">
+        <div class="container">
+
+            <div class="row content">
+                <div class="col-md-4" data-aos="fade-right">
+                    <img src="assets/img/details-1.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-md-8 pt-4" data-aos="fade-up">
+                    <h3>Visi</h3>
+                    <ul>
+                        <li><i class="icofont-check"></i> Mewujudkan Kelurahan Pagesangan Yang Terang Benderang (VISI No
+                            1)
+                        </li>
+                        <li><i class="icofont-check"></i> Mataram Indah, tertata, Aman, Damai, Maju dan Religius (VISI
+                            No 2)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row content">
+                <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
+                    <img src="assets/img/details-2.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
+                    <h3>Misi</h3>
+                    <ul>
+                        <li><i class="icofont-check"></i>
+                            Mewujudkan masyarakat Kelurahan Pagesangan sebagai Kelurahan yang merupakan nama Ibu kota
+                            Mataram dan Nama Ibu Kota Provinsi NTB sebagai kota yang indah (MISI No 1)
+                        </li>
+                        <li><i class="icofont-check"></i>
+                            Meningkatkan kualitas pelayanan publik berdasarkan prinsip tata pemerintahan yang baik dalam
+                            bentuk penataan administrasi, pemerintahan, pembangunan dan pelayanan (MISI No 2)
+                        </li>
+                        <li><i class="icofont-check"></i>
+                            Mewujudkan masyarakat Kelurahan Pagesangan yang penduduknya haterogen untuk tetap memelihara
+                            keamanan, ketentraman, ketertiban dan kedamaian ditengah masyarakat dan saling berketerima (
+                            toleransi ) yang dijiwai oleh nilai-nilai agama/religi dan kearifan lokal (local wisdom)
+                            (MISI No 3)
+                        </li>
+                        <li><i class="icofont-check"></i>
+                            Meningkatkan kwalitas SDM yang handal untuk mendorong daya saing daerah (MISI No 4)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End Details Section -->
 
     <!-- ======= Foto Kelurahan Section ======= -->
     <section id="gallery" class="gallery">

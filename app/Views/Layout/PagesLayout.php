@@ -75,18 +75,48 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5>ADMIN SIKEPA</h5>
-                        <button type=" button btn-sm" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button btn-sm" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <!-- Isi Modal -->
                     <div class="modal-body">
-
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <img src="assets/img/logo-mataram.png" alt="Logo Kota Mataram" width="100%">
+                                </div>
+                                <div class="col-sm-7">
+                                    <form role="form" action="/loginPOST">
+                                        <div class="form-group">
+                                            <label for="username">Username</label>
+                                            <input class="form-control form-control-sm input-sm" name="username"
+                                                id="inputsm" type="text" placeholder="Username"
+                                                data-match="#inputUsername" data-match-error="Username don't match"
+                                                required>
+                                            <!-- Error -->
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password">Password</label>
+                                            <input class="form-control form-control-sm input-sm" name="password"
+                                                id="inputsm" type="text" placeholder="Password"
+                                                data-match="#inputPassword" data-match-error="Username don't match"
+                                                required>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" style="width: 100%;"
+                                                class="btn btn-primary btn-sm">Login</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- End Isi Modal -->
+
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary btn-sm">Login</button>
+                        <!-- isi footer -->
                     </div>
                 </div>
             </div>
@@ -187,6 +217,8 @@
     <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
     <!-- Vendor JS Files -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
