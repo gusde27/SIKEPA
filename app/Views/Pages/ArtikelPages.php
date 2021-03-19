@@ -26,13 +26,27 @@
                 <h2>Artikel Terbaru</h2>
             </div>
 
-            <p>
-                Kantor Lurah Pagesangan dipimpin oleh seorang Lurah kemudian dibawahnya terdiri dari Seklur, Kasi
-                Pemerintahan, Kasi Ekonomi, Fisik, Sarana dan Prasarana, Kasi Sosial dan Pemberdayaan Masyarakat serta
-                staf.
-                Jumlah Pegawai Kantor Lurah Pagesangan berjumlah 11 orang terdiri dari :
-
-            </p>
+            <?php foreach($artikel as $a) : ?>
+            <a href="/artikel/<?= $a['slug'] ?>">
+                <div class="card" style="color: black;">
+                    <div class="card-body p-3">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="card">
+                                    <div class="card-body p-1">
+                                        <img src="assets/img/artikel/<?= $a['gambar'] ?>" width="100%">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                                <h5><b><?= $a['judul'] ?></b></h5>
+                                <p><?= substr($a['deskripsi'], 0, 535) ?> ...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <?php endforeach; ?>
 
         </div>
     </section>

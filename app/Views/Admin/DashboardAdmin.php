@@ -37,126 +37,135 @@
                 <!-- end alert -->
 
                 <div class="row">
+                    <?php if(session()->get('level') == 'admin') : ?>
                     <div class="col-md-7">
-                        <!-- card -->
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="section-title p-1">
-                                    <p>Biodata</p>
-                                </div>
+                        <?php else : ?>
+                        <div class="col-md">
+                            <?php endif; ?>
+                            <!-- card -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="section-title p-1">
+                                        <p>Biodata</p>
+                                    </div>
 
-                                <div style="font-size: 14px;">
-                                    <!-- Konten -->
-                                    <?php
+                                    <div style="font-size: 14px;">
+                                        <!-- Konten -->
+                                        <?php
                                         foreach($admin as $admin) :
                                      ?>
-                                    <form action="/admin_update" method="POST" id="admin_update">
-                                        <?= csrf_field(); ?>
-                                        <div class="form-group">
-                                            <label for="nama">Nama</label>
-                                            <input class="form-control form-control-sm input-sm" name="nama"
-                                                id="inputsm" type="text" value="<?= $admin['nama'] ?>"
-                                                placeholder="Nama Lengkap" form="admin_update">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="username">Username</label>
-                                            <input class="form-control form-control-sm input-sm" name="username"
-                                                id="inputsm" type="text" value="<?= $admin['username'] ?>"
-                                                placeholder="Username" form="admin_update">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="password">Password</label>
-                                            <input class="form-control form-control-sm input-sm" name="password"
-                                                id="inputsm" type="text" placeholder="Update Password"
-                                                form="admin_update">
-                                        </div>
-                                        <button type="submit" style="width: 100%;" form="admin_update"
-                                            class="btn btn-primary btn-sm">Update Data</button>
-                                    </form>
-                                    <?php endforeach; ?>
-                                    <!-- End Konten -->
+                                        <form action="/admin_update" method="POST" id="admin_update">
+                                            <?= csrf_field(); ?>
+                                            <div class="form-group">
+                                                <label for="nama">Nama</label>
+                                                <input class="form-control form-control-sm input-sm" name="nama"
+                                                    id="inputsm" type="text" value="<?= $admin['nama'] ?>"
+                                                    placeholder="Nama Lengkap" form="admin_update">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="username">Username</label>
+                                                <input class="form-control form-control-sm input-sm" name="username"
+                                                    id="inputsm" type="text" value="<?= $admin['username'] ?>"
+                                                    placeholder="Username" form="admin_update">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="password">Password</label>
+                                                <input class="form-control form-control-sm input-sm" name="password"
+                                                    id="inputsm" type="text" placeholder="Update Password"
+                                                    form="admin_update">
+                                            </div>
+                                            <button type="submit" style="width: 100%;" form="admin_update"
+                                                class="btn btn-primary btn-sm">Update Data</button>
+                                        </form>
+                                        <?php endforeach; ?>
+                                        <!-- End Konten -->
+                                    </div>
                                 </div>
                             </div>
+                            <!-- end card -->
                         </div>
-                        <!-- end card -->
-                    </div>
-                    <div class="col-md-5">
-                        <!-- card Operator -->
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="section-title p-1 mb-2">
-                                    <p>Operator Website</p>
-                                </div>
 
-                                <button style="font-size: 10px;" type="button" class="btn p-1 btn-sm btn-primary"
-                                    data-toggle="modal" data-target="#operatorModal_C">
-                                    Tambah Operator
-                                </button>
+                        <?php if(session()->get('level') != 'operator') : ?>
+                        <div class="col-md-5">
+                            <!-- card Operator -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="section-title p-1 mb-2">
+                                        <p>Operator Website</p>
+                                    </div>
 
-                                <!-- modal tambah operator -->
-                                <?php include('Modal/Operator/OperatorModal_C.php'); ?>
-                                <!-- end modal tambah operator -->
+                                    <button style="font-size: 10px;" type="button" class="btn p-1 btn-sm btn-primary"
+                                        data-toggle="modal" data-target="#operatorModal_C">
+                                        Tambah Operator
+                                    </button>
 
-                                <!-- Tables Operator -->
-                                <div class="table-responsive" style="font-size: 12.5px;">
-                                    <table id="datalol" class="table table-striped table-bordered mt-3"
-                                        style="color:black;">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col" style="text-align:center;">No</th>
-                                                <th scope="col">Nama</th>
-                                                <th scope="col">Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <!-- looping -->
-                                            <?php
+                                    <!-- modal tambah operator -->
+                                    <?php include('Modal/Operator/OperatorModal_C.php'); ?>
+                                    <!-- end modal tambah operator -->
+
+                                    <!-- Tables Operator -->
+                                    <div class="table-responsive" style="font-size: 12.5px;">
+                                        <table id="datalol" class="table table-striped table-bordered mt-3"
+                                            style="color:black;">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col" style="text-align:center;">No</th>
+                                                    <th scope="col">Nama</th>
+                                                    <th scope="col">Aksi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- looping -->
+                                                <?php
                                             $no=1; 
                                             foreach($user as $user) :
                                              ?>
-                                            <tr>
-                                                <th scope="row" style="text-align: center;">
-                                                    <?= $no++; ?>
-                                                </th>
-                                                <td><?= $user['nama']; ?></td>
-                                                <td>
-                                                    <button style="font-size: 10px;" type="button"
-                                                        class="btn p-1 btn-sm btn-primary" data-toggle="modal"
-                                                        data-target="#operatorModal_U<?= $no ?>">
-                                                        Update
-                                                    </button>
+                                                <tr>
+                                                    <th scope="row" style="text-align: center;">
+                                                        <?= $no++; ?>
+                                                    </th>
+                                                    <td><?= $user['nama']; ?></td>
+                                                    <td>
+                                                        <button style="font-size: 10px;" type="button"
+                                                            class="btn p-1 btn-sm btn-primary" data-toggle="modal"
+                                                            data-target="#operatorModal_U<?= $no ?>">
+                                                            Update
+                                                        </button>
 
-                                                    <!-- ==== Modal Update Operator -->
-                                                    <?php include('Modal/Operator/OperatorModal_U.php'); ?>
-                                                    <!-- ==== End Modal Update Operator -->
+                                                        <!-- ==== Modal Update Operator -->
+                                                        <?php include('Modal/Operator/OperatorModal_U.php'); ?>
+                                                        <!-- ==== End Modal Update Operator -->
 
-                                                    <button style="font-size: 10px;" type="button"
-                                                        class="btn p-1 btn-sm btn-danger" data-toggle="modal"
-                                                        data-target="#operatorModal_D<?= $no ?>">
-                                                        Delete
-                                                    </button>
+                                                        <button style="font-size: 10px;" type="button"
+                                                            class="btn p-1 btn-sm btn-danger" data-toggle="modal"
+                                                            data-target="#operatorModal_D<?= $no ?>">
+                                                            Delete
+                                                        </button>
 
-                                                    <!-- ==== Modal Update Operator -->
-                                                    <?php include('Modal/Operator/OperatorModal_D.php'); ?>
-                                                    <!-- ==== End Modal Update Operator -->
+                                                        <!-- ==== Modal Update Operator -->
+                                                        <?php include('Modal/Operator/OperatorModal_D.php'); ?>
+                                                        <!-- ==== End Modal Update Operator -->
 
-                                                </td>
-                                            </tr>
-                                            <?php endforeach; ?>
-                                            <!-- End looping -->
-                                        </tbody>
-                                    </table>
+                                                    </td>
+                                                </tr>
+                                                <?php endforeach; ?>
+                                                <!-- End looping -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- tutup Tables -->
                                 </div>
-                                <!-- tutup Tables -->
                             </div>
+                            <!-- end card Operator -->
                         </div>
-                        <!-- end card Operator -->
+
+                        <?php endif; ?>
+
                     </div>
                 </div>
-            </div>
-            <!-- End Konten -->
+                <!-- End Konten -->
 
-        </div>
+            </div>
     </section>
     <!-- ======= End Dashboard Section ======= -->
 

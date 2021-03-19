@@ -48,12 +48,14 @@ class PagesController extends BaseController
             ];
             session()->set($dataSession);
 
-            if (session()->get('level') == "admin") {
-                return redirect()->to('dashboard');
-            }
-			elseif (session()->get('level') == "operator") {
-                return redirect()->to('dashboard');
-            }
+			return redirect()->to('dashboard');
+			
+            // if (session()->get('level') == "admin") {
+            //     return redirect()->to('dashboard');
+            // }
+			// elseif (session()->get('level') == "operator") {
+            //     return redirect()->to('dashboard');
+            // }
             
         } 
         else {
@@ -80,12 +82,28 @@ class PagesController extends BaseController
 
 	public function pelayanan()
 	{
-		return view('Pages/PelayananPages');
+		$pelayananModel = new PelayananModel;
+
+        $pelayanan = $pelayananModel->get()->getResultArray();
+
+        $data = [
+            'pelayanan' => $pelayanan
+        ];
+
+		return view('Pages/PelayananPages', $data);
 	}
 
 	public function artikel()
 	{
-		return view('Pages/ArtikelPages');
+		$artikelModel = new ArtikelModel;
+
+        $artikel = $artikelModel->get()->getResultArray();
+
+        $data = [
+            'artikel' => $artikel
+        ];
+
+		return view('Pages/ArtikelPages', $data);
 	}
 
 	public function faq()

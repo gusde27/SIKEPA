@@ -70,7 +70,7 @@ $routes->post('/artikel_update', 'AdminController::ArtikelUpdate', ['filter' => 
 $routes->post('/artikel_delete', 'AdminController::ArtikelDelete', ['filter' => 'admin']); //delete
 
 //Admin CRUD
-$routes->post('/admin_update', 'AdminController::AdminUpdate'); //update
+$routes->post('/admin_update', 'AdminController::AdminUpdate', ['filter' => 'admin']); //update
 
 //END POST ADMIN
 

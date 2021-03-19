@@ -37,7 +37,11 @@
                                 <div class="col-sm-3">
                                     <div class="form-group">
                                         <label for="gambar">Gambar</label>
-                                        <img src="assets/img/artikel/<?= $a['gambar'] ?>" width="100%">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <img src="assets/img/artikel/<?= $a['gambar'] ?>" width="100%">
+                                            </div>
+                                        </div>
                                         <input type="file" accept="image/x-png,image/jpg,image/jpeg"
                                             class="form-control-file input-sm" id="gambar" name="gambar"
                                             form="artikel_update_<?= $no ?>">

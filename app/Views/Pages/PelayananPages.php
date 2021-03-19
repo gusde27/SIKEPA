@@ -19,22 +19,49 @@
     </section><!-- End Breadcrumbs Section -->
 
     <!-- ======= Pelayanan Section ======= -->
-    <section class="inner-page">
-        <div class="container">
+    <section class="faq inner-page">
+        <div class="container-fluid">
 
             <div class="section-title">
                 <h2>Daftar Pelayanan Kelurahan Pagesangan</h2>
             </div>
 
-            <p>
-                Kantor Lurah Pagesangan dipimpin oleh seorang Lurah kemudian dibawahnya terdiri dari Seklur, Kasi
-                Pemerintahan, Kasi Ekonomi, Fisik, Sarana dan Prasarana, Kasi Sosial dan Pemberdayaan Masyarakat serta
-                staf.
-                Jumlah Pegawai Kantor Lurah Pagesangan berjumlah 11 orang terdiri dari :
-
-            </p>
-
+            <div class="accordion-list">
+                <ul>
+                    <?php 
+                    $no = 1;
+                    foreach($pelayanan as $p) : 
+                    ?>
+                    <div class="card">
+                        <div class="card-body">
+                            <li data-aos="fade-up">
+                                <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" class="collapse"
+                                    href="#accordion-list-<?= $p['id']; ?>"><?= $p['nama'] ?>
+                                    <i class="bx bx-chevron-down icon-show"></i><i
+                                        class="bx bx-chevron-up icon-close"></i></a>
+                                <div id="accordion-list-<?= $p['id']; ?>" class="collapse"
+                                    data-parent=".accordion-list">
+                                    <p>
+                                        <b>Deskripsi</b>
+                                    </p>
+                                    <p>
+                                        <?= $p['deskripsi'] ?>
+                                    </p>
+                                    <p>
+                                        <b>Persyaratan</b>
+                                    </p>
+                                    <p>
+                                        <?= $p['syarat'] ?>
+                                    </p>
+                                </div>
+                            </li>
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
         </div>
+
     </section>
     <!-- ======= End Pelayanan Section ======= -->
 
