@@ -281,6 +281,153 @@ class AdminController extends BaseController
         return redirect()->back();
         return redirect()->to('dashboard');
     }
-	//======= END CRUD User Operator ========
-	
+	//======= END CRUD Pelayanan ========
+
+    //======= CRUD Artikel ========
+
+	//Create
+	public function ArtikelTambah()
+    {
+        $validation = \Config\Services::validation();
+        $request = \Config\Services::request(); //aktifkan request
+
+        if (!$this->validate([
+            'judul' => 'required',
+            'deskripsi' => 'required'
+        ])) {
+
+            session()->setFlashdata('pesan', 'Data Artikel gagal ditambahkan!');
+
+            return redirect()->back();
+            return redirect()->to('artikel-admin')->withInput()->with('validation', $validation);
+        }
+
+        $artikelModel = new ArtikelModel();
+
+        if ($request->getFile('gambar') !=  '') 
+        {
+        $judul = $request->getVar('judul');
+        $deskripsi = $request->getVar('deskripsi');
+
+        $slug = url_title($judul, '-', true);
+
+        $gambar = $request->getFile('gambar');
+
+        $nama_gambar = $judul . "." . $gambar->getExtension();
+
+        $gambar->move("assets/img/artikel", $judul . "." . $gambar->getExtension(), true);
+        
+        $artikelModel->save([
+            'judul' => $judul,
+            'deskripsi' => $deskripsi,
+            'gambar' => $nama_gambar,
+            'slug' => $slug
+            ]);
+            
+        session()->setFlashdata('pesan', 'Data Artikel Berhasil ditambahkan!');
+        
+        return redirect()->back();
+        return redirect()->to('artikel-admin');
+        } 
+        else
+        {
+        $judul = $request->getVar('judul');
+        $deskripsi = $request->getVar('deskripsi');
+
+        $slug = url_title($judul, '-', true);
+        
+        $artikelModel->save([
+            'judul' => $judul,
+            'deskripsi' => $deskripsi,
+            'slug' => $slug
+            ]);
+            
+        session()->setFlashdata('pesan', 'Data Artikel Berhasil ditambahkan!');
+        
+        return redirect()->back();
+        return redirect()->to('artikel-admin')->with('validation', $validation);
+        }
+    }
+    
+    //Update
+    public function ArtikelUpdate()
+    {
+        $request = \Config\Services::request(); //aktifkan request
+        
+        $artikelModel = new ArtikelModel();
+
+        if ($request->getFile('gambar') !=  '') 
+        {
+            
+        $id_artikel = $request->getVar('id_artikel');
+
+        $judul = $request->getVar('judul');
+        $deskripsi = $request->getVar('deskripsi');
+
+        $slug = url_title($judul, '-', true);
+
+        $gambar = $request->getFile('gambar');
+        
+        $nama_gambar = $judul . "." . $gambar->getExtension();
+
+        $gambar->move("assets/img/artikel", $judul . "." . $gambar->getExtension(), true);
+        
+        $artikelModel->save([
+            'id' => $id_artikel,
+            'judul' => $judul,
+            'deskripsi' => $deskripsi,
+            'gambar' => $nama_gambar,
+            'slug' => $slug
+            ]);
+            
+        session()->setFlashdata('pesan', 'Data Artikel Berhasil diubah!');
+        
+        return redirect()->back();
+        return redirect()->to('artikel-admin');
+        } 
+        else
+        {
+        $id_artikel = $request->getVar('id_artikel');
+        $judul = $request->getVar('judul');
+        $deskripsi = $request->getVar('deskripsi');
+
+        $slug = url_title($judul, '-', true);
+        
+        $artikelModel->save([
+            'id' => $id_artikel,
+            'judul' => $judul,
+            'deskripsi' => $deskripsi,
+            'slug' => $slug
+            ]);
+            
+        session()->setFlashdata('pesan', 'Data Artikel Berhasil diubah!');
+        
+        return redirect()->back();
+        return redirect()->to('artikel-admin');
+        }
+        
+    }
+
+    //Delete
+    public function ArtikelDelete()
+    {
+        $request = \Config\Services::request(); //aktifkan request
+
+        $artikelModel = new ArtikelModel();
+
+        $id_artikel = $request->getVar('id_artikel');
+
+        $nama_gambar = $request->getVar('gambar');
+
+        $artikelModel->delete($id_artikel);
+        unlink('assets/img/artikel/' . $nama_gambar);
+
+        session()->setFlashdata('pesan', 'Data Artikel Berhasil dihapus');
+
+        return redirect()->back();
+        return redirect()->to('artikel-admin');
+    }
+	//======= END CRUD Artikel ========
+
+    
 }

@@ -8,5 +8,5 @@ class PelayananModel extends Model
 {
     protected $table = 'pelayanan';
     protected $useTimestamps = true;
-    protected $allowedFields = ['id', 'nama', 'syarat', 'deskripsi', 'slug'];
+    protected $allowedFields = ['id','nama', 'syarat', 'deskripsi', 'slug'];
 }

@@ -16,7 +16,7 @@
                 <div class="modal-body" style="font-size: 14px;">
                     <div class="container">
 
-                        <form method="POST" action="/artikel_tambah" id="artikelTambah">
+                        <form method="POST" action="/artikel_tambah" id="artikelTambah" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="nama">Judul</label>
                                 <input class="form-control form-control-sm input-sm" name="judul" id="inputsm"
@@ -26,6 +26,11 @@
                                 <label for="deskripsi">Deskripsi</label>
                                 <textarea class="form-control form-control-sm input-sm" name="deskripsi" id="deskripsi"
                                     form="artikelTambah" rows="6"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="gambar">Gambar</label>
+                                <input type="file" accept="image/x-png,image/jpg,image/jpeg"
+                                    class="form-control-file input-sm" id="gambar" name="gambar" form="artikelTambah">
                             </div>
                             <button type="submit" style="width: 100%;" form="artikelTambah"
                                 class="btn btn-primary btn-sm">Tambah</button>
