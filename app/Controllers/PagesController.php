@@ -22,8 +22,8 @@ class PagesController extends BaseController
         $request = \Config\Services::request();
         $user = new UserModel();
         
-        $pass = $this->$request->getVar('password');
-		$username = $this->$request->getVar('username');
+        $pass = $request->getVar('password');
+		$username = $request->getVar('username');
         
         $cek = $user->select('id, nama, username, password, level')->where([
             'username' => $username

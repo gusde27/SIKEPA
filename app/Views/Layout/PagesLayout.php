@@ -87,7 +87,7 @@
                                     <img src="assets/img/logo-mataram.png" alt="Logo Kota Mataram" width="100%">
                                 </div>
                                 <div class="col-sm-7">
-                                    <form role="form" action="/loginPOST">
+                                    <form role="form" method="POST" action="/loginPOST">
                                         <div class="form-group">
                                             <label for="username">Username</label>
                                             <input class="form-control form-control-sm input-sm" name="username"

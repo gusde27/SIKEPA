@@ -33,7 +33,8 @@
                                 <input class="form-control form-control-sm input-sm" name="password" id="inputsm"
                                     type="text" placeholder="Password" required form="operatorTambah">
                             </div>
-                            <button type="submit" style="width: 100%;" class="btn btn-primary btn-sm">Tambah</button>
+                            <button type="submit" style="width: 100%;" form="operatorTambah"
+                                class="btn btn-primary btn-sm">Tambah</button>
                         </form>
 
                     </div>

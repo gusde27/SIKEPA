@@ -37,6 +37,14 @@
                                     <!-- Konten -->
                                     <form action="/">
                                         <div class="form-group">
+                                            <label for="nama">Nama</label>
+                                            <input class="form-control form-control-sm input-sm" name="nama"
+                                                id="inputsm" type="text" placeholder="Nama" data-match="#inputnama"
+                                                data-match-error="nama don't match" required>
+                                            <!-- Error -->
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                        <div class="form-group">
                                             <label for="username">Username</label>
                                             <input class="form-control form-control-sm input-sm" name="username"
                                                 id="inputsm" type="text" placeholder="Username"
@@ -80,7 +88,7 @@
                                 <!-- end modal tambah operator -->
 
                                 <!-- Tables Operator -->
-                                <div class="table-responsive" style="font-size: 13.5px;">
+                                <div class="table-responsive" style="font-size: 12.5px;">
                                     <table id="datalol" class="table table-striped table-bordered mt-3"
                                         style="color:black;">
                                         <thead>
@@ -92,24 +100,33 @@
                                         </thead>
                                         <tbody>
                                             <!-- looping -->
+                                            <?php
+                                            $no=1; 
+                                            foreach($user as $user) :
+                                             ?>
                                             <tr>
                                                 <th scope="row" style="text-align: center;">
-                                                    1
+                                                    <?= $no; ?>
                                                 </th>
-                                                <td>I Gede Bagus Wirawan</td>
+                                                <td><?= $user['nama']; ?></td>
                                                 <td>
-                                                    <button style="font-size: 11px;" type="button"
+                                                    <button style="font-size: 10px;" type="button"
                                                         class="btn p-1 btn-sm btn-primary" data-toggle="modal"
-                                                        data-target="#operator_U">
+                                                        data-target="#operator_U<?= $no ?>">
                                                         Update
                                                     </button>
-                                                    <button style="font-size: 11px;" type="button"
+
+                                                    <!-- ==== Modal Update Operator -->
+                                                    <?php include('Modal/Operator/Operator_U.php'); ?>
+                                                    <!-- ==== End Modal Update Operator -->
+                                                    <button style="font-size: 10px;" type="button"
                                                         class="btn p-1 btn-sm btn-danger" data-toggle="modal"
                                                         data-target="#operator_D">
                                                         Delete
                                                     </button>
                                                 </td>
                                             </tr>
+                                            <?php endforeach; ?>
                                             <!-- End looping -->
                                         </tbody>
                                     </table>
