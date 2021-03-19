@@ -89,7 +89,7 @@
                                 </div>
 
                                 <button style="font-size: 10px;" type="button" class="btn p-1 btn-sm btn-primary"
-                                    data-toggle="modal" data-target="#operator_C">
+                                    data-toggle="modal" data-target="#operatorModal_C">
                                     Tambah Operator
                                 </button>
 
@@ -122,22 +122,22 @@
                                                 <td>
                                                     <button style="font-size: 10px;" type="button"
                                                         class="btn p-1 btn-sm btn-primary" data-toggle="modal"
-                                                        data-target="#operator_U<?= $no ?>">
+                                                        data-target="#operatorModal_U<?= $no ?>">
                                                         Update
                                                     </button>
 
                                                     <!-- ==== Modal Update Operator -->
-                                                    <?php include('Modal/Operator/Operator_U.php'); ?>
+                                                    <?php include('Modal/Operator/OperatorModal_U.php'); ?>
                                                     <!-- ==== End Modal Update Operator -->
 
                                                     <button style="font-size: 10px;" type="button"
                                                         class="btn p-1 btn-sm btn-danger" data-toggle="modal"
-                                                        data-target="#operator_D<?= $no ?>">
+                                                        data-target="#operatorModal_D<?= $no ?>">
                                                         Delete
                                                     </button>
 
                                                     <!-- ==== Modal Update Operator -->
-                                                    <?php include('Modal/Operator/Operator_D.php'); ?>
+                                                    <?php include('Modal/Operator/OperatorModal_D.php'); ?>
                                                     <!-- ==== End Modal Update Operator -->
 
                                                 </td>

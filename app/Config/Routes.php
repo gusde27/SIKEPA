@@ -59,6 +59,11 @@ $routes->post('/operator_tambah', 'AdminController::OperatorTambah', ['filter' =
 $routes->post('/operator_update', 'AdminController::OperatorUpdate', ['filter' => 'admin']); //update
 $routes->post('/operator_delete', 'AdminController::OperatorDelete', ['filter' => 'admin']); //delete
 
+//Pelayanan CRUD
+$routes->post('/pelayanan_tambah', 'AdminController::PelayananTambah', ['filter' => 'admin']); //create
+$routes->post('/pelayanan_update', 'AdminController::PelayananUpdate', ['filter' => 'admin']); //update
+$routes->post('/pelayanan_delete', 'AdminController::PelayananDelete', ['filter' => 'admin']); //delete
+
 //Admin CRUD
 $routes->post('/admin_update', 'AdminController::AdminUpdate'); //update
 

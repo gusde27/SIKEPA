@@ -7,7 +7,7 @@
         <div class="modal-dialog modal-lg vertical-align-center" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5>Operator</h5>
+                    <h5>Pelayanan</h5>
                     <button type="button btn-sm" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -16,24 +16,23 @@
                 <div class="modal-body" style="font-size: 14px;">
                     <div class="container">
 
-                        <form method="POST" action="/operator_tambah" id="operatorTambah">
+                        <form method="POST" action="/pelayanan_tambah" id="pelayananTambah">
                             <div class="form-group">
-                                <label for="nama">Nama</label>
+                                <label for="nama">Nama Pelayanan</label>
                                 <input class="form-control form-control-sm input-sm" name="nama" id="inputsm"
-                                    type="text" placeholder="Nama Lengkap" data-match="#inputNama"
-                                    data-match-error="Nama don't match" required form="operatorTambah">
+                                    type="text" placeholder="Nama Pelayanan" required form="pelayananTambah">
                             </div>
                             <div class="form-group">
-                                <label for="username">Username</label>
-                                <input class="form-control form-control-sm input-sm" name="username" id="inputsm"
-                                    type="text" placeholder="Username" required form="operatorTambah">
+                                <label for="syarat">Syarat</label>
+                                <textarea class="form-control form-control-sm input-sm" name="syarat" id="syarat"
+                                    form="pelayananTambah" rows="6"></textarea>
                             </div>
                             <div class="form-group">
-                                <label for="password">Password</label>
-                                <input class="form-control form-control-sm input-sm" name="password" id="inputsm"
-                                    type="text" placeholder="Password" required form="operatorTambah">
+                                <label for="deskripsi">Deskripsi</label>
+                                <textarea class="form-control form-control-sm input-sm" name="deskripsi" id="deskripsi"
+                                    form="pelayananTambah" rows="6"></textarea>
                             </div>
-                            <button type="submit" style="width: 100%;" form="operatorTambah"
+                            <button type="submit" style="width: 100%;" form="pelayananTambah"
                                 class="btn btn-primary btn-sm">Tambah</button>
                         </form>
 

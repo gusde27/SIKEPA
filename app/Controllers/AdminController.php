@@ -31,7 +31,15 @@ class AdminController extends BaseController
 
 	public function pelayanan_admin()
 	{
-		return view('Admin/PelayananAdmin');
+        $pelayananModel = new PelayananModel;
+
+        $pelayanan = $pelayananModel->get()->getResultArray();
+
+        $data = [
+            'pelayanan' => $pelayanan
+        ];
+
+		return view('Admin/PelayananAdmin', $data);
 	}
 
 	public function artikel_admin()
@@ -178,5 +186,93 @@ class AdminController extends BaseController
     }
 
 	//======= END CRUD User Admin ========
+
+    //======= CRUD Pelayanan ========
+
+	//Create
+	public function PelayananTambah()
+    {
+        $validation = \Config\Services::validation();
+        $request = \Config\Services::request(); //aktifkan request
+
+        if (!$this->validate([
+            'nama' => 'required',
+            'syarat' => 'required',
+            'deskripsi' => 'required'
+        ])) {
+
+            session()->setFlashdata('pesan', 'Data Pelayanan gagal ditambahkan!');
+
+            return redirect()->back();
+            return redirect()->to('pelayanan-admin')->withInput()->with('validation', $validation);
+        }
+
+        $pelayananModel = new PelayananModel();
+
+        $nama = $request->getVar('nama');
+        $syarat = $request->getVar('syarat');
+        $deskripsi = $request->getVar('deskripsi');
+
+        $slug = url_title($nama, '-', true);
+        
+        $pelayananModel->save([
+            'nama' => $nama,
+            'syarat' => $syarat,
+            'deskripsi' => $deskripsi,
+            'slug' => $slug
+            ]);
+            
+        session()->setFlashdata('pesan', 'Data Pelayanan Berhasil ditambahkan!');
+        
+        return redirect()->back();
+        return redirect()->to('pelayanan-admin')->with('validation', $validation);
+    }
+    
+    //Update
+    public function PelayananUpdate()
+    {
+        $request = \Config\Services::request(); //aktifkan request
+        
+        $pelayananModel = new PelayananModel();
+        
+        $nama = $request->getVar('nama');
+        $syarat = $request->getVar('syarat');
+        $deskripsi = $request->getVar('deskripsi');
+        $slug = url_title($nama, '-', true);
+        
+        $id_pelayanan = $request->getVar('id_pelayanan');
+        
+        $pelayananModel->save([
+                'id' => $id_pelayanan,
+                'nama' => $nama,
+                'syarat' => $syarat,
+                'deskripsi' => $deskripsi,
+                'slug' => $slug
+        ]);
+    
+        session()->setFlashdata('pesan', 'Data Pelayanan Berhasil diubah!');
+    
+        return redirect()->back();
+        return redirect()->to('pelayanan-admin');
+        
+    }
+
+    //Delete
+    public function PelayananDelete()
+    {
+        $request = \Config\Services::request(); //aktifkan request
+
+        $userModel = new UserModel();
+
+        $id = $request->getVar('id_operator');
+
+        $userModel->delete($id);
+
+        session()->setFlashdata('pesan', 'Data Operator Berhasil dihapus');
+
+        return redirect()->back();
+        return redirect()->to('dashboard');
+    }
+	//======= END CRUD User Operator ========
 	
 }

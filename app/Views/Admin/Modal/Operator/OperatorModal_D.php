@@ -1,6 +1,6 @@
 <!-- ======== Delete Modal Operator =========== -->
 <!-- Modal -->
-<div class="modal fade" style="color: none;" id="operator_D<?= $no ?>" tabindex="-1" role="dialog"
+<div class="modal fade" style="color: none;" id="operatorModal_D<?= $no ?>" tabindex="-1" role="dialog"
     aria-labelledby="update_berita" aria-hidden="true">
     <div class="vertical-alignment-helper">
         <div class="modal-dialog vertical-align-center modal-sm" role="document">
