@@ -16,7 +16,9 @@ class AdminController extends BaseController
 	{
         $userModel = new UserModel;
 
-        $user = $userModel->get()->getResultArray();
+        $operator = 'operator';
+
+        $user = $userModel->where('level', $operator)->get()->getResultArray();
         $admin = $userModel->where('id', session()->get('id'))->get()->getResultArray();
 
         $data = [
@@ -55,7 +57,7 @@ class AdminController extends BaseController
             session()->setFlashdata('pesan', 'Data Operator gagal ditambahkan!');
 
             return redirect()->back();
-            return redirect()->to('Admin/DashboardAdmin')->withInput()->with('validation', $validation);
+            return redirect()->to('dashboard')->withInput()->with('validation', $validation);
         }
 
         $userModel = new UserModel();
@@ -68,13 +70,13 @@ class AdminController extends BaseController
             'nama' => $nama,
             'username' => $username,
             'password' => password_hash($password, PASSWORD_BCRYPT),
-            'level' => 'admin'
+            'level' => 'operator'
         ]);
 
         session()->setFlashdata('pesan', 'Data Operator Berhasil ditambahkan!');
         
         return redirect()->back();
-        return redirect()->to('Admin/DashboardAdmin')->with('validation', $validation);
+        return redirect()->to('dashboard')->with('validation', $validation);
     }
 
     //Update
@@ -88,7 +90,7 @@ class AdminController extends BaseController
         $username = $request->getVar('username');
         $password = $request->getVar('password');
 
-        $id_user = session()->get('id');
+        $id_user = $request->getVar('id');
 
         $userModel->save([
             'id' => $id_user,
@@ -100,9 +102,55 @@ class AdminController extends BaseController
         session()->setFlashdata('pesan', 'Data Operator Berhasil diubah!');
 
         return redirect()->back();
-        return redirect()->to('Admin/DashboardAdmin');
+        return redirect()->to('dashboard');
     }
 
+    //Delete
+    public function OperatorDelete()
+    {
+        $request = \Config\Services::request(); //aktifkan request
+
+        $userModel = new UserModel();
+
+        $id = $request->getVar('id_operator');
+
+        $userModel->delete($id);
+
+        session()->setFlashdata('pesan', 'Data Operator Berhasil dihapus');
+
+        return redirect()->back();
+        return redirect()->to('dashboard');
+    }
 	//======= END CRUD User Operator ========
+
+	//======= CRUD User Admin ========
+
+    //update
+    public function AdminUpdate()
+    {
+        $request = \Config\Services::request(); //aktifkan request
+        
+        $userModel = new UserModel();
+
+        $nama = $request->getVar('nama');
+        $username = $request->getVar('username');
+        $password = $request->getVar('password');
+
+        $id_admin = session()->get('id');
+
+        $userModel->save([
+            'id' => $id_admin,
+            'nama' => $nama,
+            'username' => $username,
+            'password' => password_hash($password, PASSWORD_BCRYPT)
+        ]);
+
+        session()->setFlashdata('pesan', 'Data Admin Berhasil diubah!');
+
+        return redirect()->back();
+        return redirect()->to('dashboard');
+    }
+
+	//======= END CRUD User Admin ========
 	
 }

@@ -59,6 +59,8 @@ $routes->post('/operator_tambah', 'AdminController::OperatorTambah'); //create
 $routes->post('/operator_update', 'AdminController::OperatorUpdate'); //update
 $routes->post('/operator_delete', 'AdminController::OperatorDelete'); //delete
 
+//Admin CRUD
+$routes->post('/admin_update', 'AdminController::AdminUpdate'); //update
 
 //END POST
 

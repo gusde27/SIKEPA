@@ -16,6 +16,8 @@
                     <div class="container">
                         <form action="/operator_update" method="POST" id="operator_update_<?= $no ?>">
                             <?= csrf_field(); ?>
+                            <input hidden="true" name="id" id="inputsm" type="text" value="<?= $user['id'] ?>"
+                                form="operator_update_<?= $no ?>">
                             <div class="form-group">
                                 <label for="nama">Nama</label>
                                 <input class="form-control form-control-sm input-sm" name="nama" id="inputsm"

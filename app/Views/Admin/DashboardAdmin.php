@@ -24,6 +24,18 @@
 
             <!-- Konten -->
             <div class="container">
+
+                <!-- alert -->
+                <?php if (session()->getFlashdata('pesan')) : ?>
+                <div class="alert alert-primary alert-dismissible fade show" style="font-size: 14px;" role="alert">
+                    <?= session()->getFlashdata('pesan'); ?>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <?php endif; ?>
+                <!-- end alert -->
+
                 <div class="row">
                     <div class="col-md-7">
                         <!-- card -->
@@ -35,35 +47,33 @@
 
                                 <div style="font-size: 14px;">
                                     <!-- Konten -->
-                                    <form action="/">
+                                    <?php
+                                        foreach($admin as $admin) :
+                                     ?>
+                                    <form action="/admin_update" method="POST" id="admin_update">
+                                        <?= csrf_field(); ?>
                                         <div class="form-group">
                                             <label for="nama">Nama</label>
                                             <input class="form-control form-control-sm input-sm" name="nama"
-                                                id="inputsm" type="text" placeholder="Nama" data-match="#inputnama"
-                                                data-match-error="nama don't match" required>
-                                            <!-- Error -->
-                                            <div class="help-block with-errors"></div>
+                                                id="inputsm" type="text" value="<?= $admin['nama'] ?>"
+                                                placeholder="Nama Lengkap" form="admin_update">
                                         </div>
                                         <div class="form-group">
                                             <label for="username">Username</label>
                                             <input class="form-control form-control-sm input-sm" name="username"
-                                                id="inputsm" type="text" placeholder="Username"
-                                                data-match="#inputUsername" data-match-error="Username don't match"
-                                                required>
-                                            <!-- Error -->
-                                            <div class="help-block with-errors"></div>
+                                                id="inputsm" type="text" value="<?= $admin['username'] ?>"
+                                                placeholder="Username" form="admin_update">
                                         </div>
                                         <div class="form-group">
                                             <label for="password">Password</label>
                                             <input class="form-control form-control-sm input-sm" name="password"
-                                                id="inputsm" type="text" placeholder="Password"
-                                                data-match="#inputPassword" data-match-error="Username don't match"
-                                                required>
+                                                id="inputsm" type="text" placeholder="Update Password"
+                                                form="admin_update">
                                         </div>
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-primary btn-sm">Login</button>
-                                        </div>
+                                        <button type="submit" style="width: 100%;" form="admin_update"
+                                            class="btn btn-primary btn-sm">Update Data</button>
                                     </form>
+                                    <?php endforeach; ?>
                                     <!-- End Konten -->
                                 </div>
                             </div>
@@ -106,7 +116,7 @@
                                              ?>
                                             <tr>
                                                 <th scope="row" style="text-align: center;">
-                                                    <?= $no; ?>
+                                                    <?= $no++; ?>
                                                 </th>
                                                 <td><?= $user['nama']; ?></td>
                                                 <td>
@@ -119,11 +129,17 @@
                                                     <!-- ==== Modal Update Operator -->
                                                     <?php include('Modal/Operator/Operator_U.php'); ?>
                                                     <!-- ==== End Modal Update Operator -->
+
                                                     <button style="font-size: 10px;" type="button"
                                                         class="btn p-1 btn-sm btn-danger" data-toggle="modal"
-                                                        data-target="#operator_D">
+                                                        data-target="#operator_D<?= $no ?>">
                                                         Delete
                                                     </button>
+
+                                                    <!-- ==== Modal Update Operator -->
+                                                    <?php include('Modal/Operator/Operator_D.php'); ?>
+                                                    <!-- ==== End Modal Update Operator -->
+
                                                 </td>
                                             </tr>
                                             <?php endforeach; ?>
