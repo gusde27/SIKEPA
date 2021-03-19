@@ -52,6 +52,16 @@ $routes->get('/faq', 'PagesController::faq');
 $routes->get('/dashboard', 'AdminController::Dashboard');
 $routes->get('/pelayanan-admin', 'AdminController::pelayanan_admin');
 $routes->get('/artikel-admin', 'AdminController::artikel_admin');
+
+//POST
+//Operator CRUD
+$routes->post('/operator_tambah', 'AdminController::OperatorTambah'); //create
+$routes->post('/operator_update', 'AdminController::OperatorUpdate'); //update
+$routes->post('/operator_delete', 'AdminController::OperatorDelete'); //delete
+
+
+//END POST
+
 //End Admin Routes
 
 

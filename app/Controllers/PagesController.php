@@ -8,6 +8,7 @@ use App\Models\PelayananModel;
 
 class PagesController extends BaseController
 {
+
 	//======= Login/Logout Sistem Informasi ========
 	public function logout() {
         
@@ -18,10 +19,11 @@ class PagesController extends BaseController
 
     public function loginPOST()
     {
+        $request = \Config\Services::request();
         $user = new UserModel();
         
-        $pass = $this->request->getVar('password');
-		$username = $this->request->getVar('username');
+        $pass = $this->$request->getVar('password');
+		$username = $this->$request->getVar('username');
         
         $cek = $user->select('id, nama, username, password, level')->where([
             'username' => $username

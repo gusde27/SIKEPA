@@ -22,11 +22,106 @@
                 <h2>Wellcome Admin!</h2>
             </div>
 
-            <div class="card">
-                <div class="card-body">
-                    <p>This is some text within a card body.</p>
+            <!-- Konten -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <!-- card -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="section-title p-1">
+                                    <p>Biodata</p>
+                                </div>
+
+                                <div style="font-size: 14px;">
+                                    <!-- Konten -->
+                                    <form action="/">
+                                        <div class="form-group">
+                                            <label for="username">Username</label>
+                                            <input class="form-control form-control-sm input-sm" name="username"
+                                                id="inputsm" type="text" placeholder="Username"
+                                                data-match="#inputUsername" data-match-error="Username don't match"
+                                                required>
+                                            <!-- Error -->
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password">Password</label>
+                                            <input class="form-control form-control-sm input-sm" name="password"
+                                                id="inputsm" type="text" placeholder="Password"
+                                                data-match="#inputPassword" data-match-error="Username don't match"
+                                                required>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary btn-sm">Login</button>
+                                        </div>
+                                    </form>
+                                    <!-- End Konten -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end card -->
+                    </div>
+                    <div class="col-md-5">
+                        <!-- card Operator -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="section-title p-1 mb-2">
+                                    <p>Operator Website</p>
+                                </div>
+
+                                <button style="font-size: 10px;" type="button" class="btn p-1 btn-sm btn-primary"
+                                    data-toggle="modal" data-target="#operator_C">
+                                    Tambah Operator
+                                </button>
+
+                                <!-- modal tambah operator -->
+                                <?php include('Modal/Operator/OperatorModal_C.php'); ?>
+                                <!-- end modal tambah operator -->
+
+                                <!-- Tables Operator -->
+                                <div class="table-responsive" style="font-size: 13.5px;">
+                                    <table id="datalol" class="table table-striped table-bordered mt-3"
+                                        style="color:black;">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" style="text-align:center;">No</th>
+                                                <th scope="col">Nama</th>
+                                                <th scope="col">Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- looping -->
+                                            <tr>
+                                                <th scope="row" style="text-align: center;">
+                                                    1
+                                                </th>
+                                                <td>I Gede Bagus Wirawan</td>
+                                                <td>
+                                                    <button style="font-size: 11px;" type="button"
+                                                        class="btn p-1 btn-sm btn-primary" data-toggle="modal"
+                                                        data-target="#operator_U">
+                                                        Update
+                                                    </button>
+                                                    <button style="font-size: 11px;" type="button"
+                                                        class="btn p-1 btn-sm btn-danger" data-toggle="modal"
+                                                        data-target="#operator_D">
+                                                        Delete
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <!-- End looping -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- tutup Tables -->
+                            </div>
+                        </div>
+                        <!-- end card Operator -->
+                    </div>
                 </div>
             </div>
+            <!-- End Konten -->
 
         </div>
     </section>

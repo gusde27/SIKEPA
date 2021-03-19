@@ -87,56 +87,7 @@
         -->
 
         <div class="footer-top">
-            <div class="container">
-                <div class="row">
 
-                    <div class="col-lg-3 col-md-6 footer-contact" data-aos="fade-up">
-                        <h3>SIKEPA</h3>
-                        <p>
-                            Jl. Guru Bangkol No.1 <br>
-                            Pagesangan<br>
-                            Kota Mataram<br><br>
-                            <strong>Phone:</strong> (0370) 631541<br>
-                            <strong>Email:</strong> - <br>
-                        </p>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="100">
-                        <h4>Useful Links</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Struktur Organisasi</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Pelayanan</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">F.A.Q</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Artikel</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="200">
-                        <h4>Pelayanan</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Surat Keterangan Usaha</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Surat Keterangan Pindah</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Surat Keterangan Kelahiran</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Surat Keterangan Haji</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">DLL</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="300">
-                        <h4>Sosial Media</h4>
-                        <p>Sosial Media Kelurahan Pagesangan, Kota Mataram, Nusa Tenggara Barat</p>
-                        <div class="social-links mt-3">
-                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
         </div>
 
         <div class="container py-4">
