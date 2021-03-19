@@ -16,6 +16,12 @@ class AdminFilter implements FilterInterface
             
             return redirect()->to('/');
         }
+        elseif (session()->get('level') != "operator") {
+            
+            session()->setFlashdata('pesan', 'Harap Login Ulang!');
+            
+            return redirect()->to('/');
+        }
     }
 
     //--------------------------------------------------------------------

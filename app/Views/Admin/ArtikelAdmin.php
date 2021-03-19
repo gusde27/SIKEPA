@@ -8,7 +8,7 @@
         <div class="container">
 
             <div class="d-flex justify-content-between align-items-center">
-                <h2>Pelayanan</h2>
+                <h2>Artikel</h2>
             </div>
 
         </div>
@@ -19,7 +19,7 @@
         <div class="container">
 
             <div class="section-title">
-                <h2>Daftar Pelayanan</h2>
+                <h2>Daftar Artikel</h2>
             </div>
 
             <!-- Konten -->
@@ -38,16 +38,16 @@
             <div class="card">
                 <div class="card-body">
                     <div class="section-title p-1 mb-2">
-                        <p>Tabel Pelayanan</p>
+                        <p>Tabel Artikel</p>
                     </div>
 
                     <button style="font-size: 12px;" type="button" class="btn p-1 btn-sm btn-primary"
-                        data-toggle="modal" data-target="#operatorModal_C">
-                        Tambah Pelayanan
+                        data-toggle="modal" data-target="#artikelModal_C">
+                        Tambah Artikel
                     </button>
 
                     <!-- modal tambah operator -->
-                    <?php include('Modal/Pelayanan/PelayananModal_C.php'); ?>
+                    <?php include('Modal/Artikel/ArtikelModal_C.php'); ?>
                     <!-- end modal tambah operator -->
 
                     <!-- Tables Operator -->
@@ -56,7 +56,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col" style="text-align:center;">No</th>
-                                    <th scope="col">Nama</th>
+                                    <th scope="col">Judul</th>
                                     <th scope="col">Aksi</th>
                                 </tr>
                             </thead>
@@ -64,33 +64,33 @@
                                 <!-- looping -->
                                 <?php
                                             $no=1; 
-                                            foreach($pelayanan as $p) :
+                                            foreach($artikel as $a) :
                                              ?>
                                 <tr>
                                     <th scope="row" style="text-align: center;">
                                         <?= $no++; ?>
                                     </th>
                                     <td>
-                                        <?= $p['nama']; ?>
+                                        <?= $a['judul']; ?>
                                     </td>
                                     <td>
                                         <button style="font-size: 12px;" type="button"
                                             class="btn p-1 btn-sm btn-primary" data-toggle="modal"
-                                            data-target="#operatorModal_U<?= $no ?>">
+                                            data-target="#artikelModal_U<?= $no ?>">
                                             Update
                                         </button>
 
                                         <!-- ==== Modal Update Operator -->
-                                        <?php include('Modal/Pelayanan/PelayananModal_U.php'); ?>
+                                        <?php include('Modal/Artikel/ArtikelModal_U.php'); ?>
                                         <!-- ==== End Modal Update Operator -->
 
                                         <button style="font-size: 12px;" type="button" class="btn p-1 btn-sm btn-danger"
-                                            data-toggle="modal" data-target="#operatorModal_D<?= $no ?>">
+                                            data-toggle="modal" data-target="#artikelModal_D<?= $no ?>">
                                             Delete
                                         </button>
 
                                         <!-- ==== Modal Update Operator -->
-                                        <?php include('Modal/Pelayanan/PelayananModal_D.php'); ?>
+                                        <?php include('Modal/Artikel/ArtikelModal_D.php'); ?>
                                         <!-- ==== End Modal Update Operator -->
 
                                     </td>

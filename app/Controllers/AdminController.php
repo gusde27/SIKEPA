@@ -44,7 +44,15 @@ class AdminController extends BaseController
 
 	public function artikel_admin()
 	{
-		return view('Admin/ArtikelAdmin');
+        $artikelModel = new ArtikelModel;
+
+        $artikel = $artikelModel->get()->getResultArray();
+
+        $data = [
+            'artikel' => $artikel
+        ];
+
+		return view('Admin/ArtikelAdmin', $data);
 	}
 	//======= End Halaman Sistem Informasi ========
 
@@ -262,13 +270,13 @@ class AdminController extends BaseController
     {
         $request = \Config\Services::request(); //aktifkan request
 
-        $userModel = new UserModel();
+        $pelayananModel = new PelayananModel();
 
-        $id = $request->getVar('id_operator');
+        $id = $request->getVar('id_pelayanan');
 
-        $userModel->delete($id);
+        $pelayananModel->delete($id);
 
-        session()->setFlashdata('pesan', 'Data Operator Berhasil dihapus');
+        session()->setFlashdata('pesan', 'Data Pelayanan Berhasil dihapus');
 
         return redirect()->back();
         return redirect()->to('dashboard');

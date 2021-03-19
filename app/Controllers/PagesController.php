@@ -51,6 +51,9 @@ class PagesController extends BaseController
             if (session()->get('level') == "admin") {
                 return redirect()->to('dashboard');
             }
+			elseif (session()->get('level') == "operator") {
+                return redirect()->to('dashboard');
+            }
             
         } 
         else {

@@ -48,12 +48,12 @@ $routes->get('/pelayanan', 'PagesController::pelayanan');
 $routes->get('/faq', 'PagesController::faq');
 //End Pages Routes
 
-//Admin Routes
+// ===================== Admin Routes ====================
 $routes->get('/dashboard', 'AdminController::Dashboard', ['filter' => 'admin']);
 $routes->get('/pelayanan-admin', 'AdminController::pelayanan_admin', ['filter' => 'admin']);
 $routes->get('/artikel-admin', 'AdminController::artikel_admin', ['filter' => 'admin']);
 
-//POST
+//POST ADMIN
 //Operator CRUD
 $routes->post('/operator_tambah', 'AdminController::OperatorTambah', ['filter' => 'admin']); //create
 $routes->post('/operator_update', 'AdminController::OperatorUpdate', ['filter' => 'admin']); //update
@@ -64,12 +64,17 @@ $routes->post('/pelayanan_tambah', 'AdminController::PelayananTambah', ['filter'
 $routes->post('/pelayanan_update', 'AdminController::PelayananUpdate', ['filter' => 'admin']); //update
 $routes->post('/pelayanan_delete', 'AdminController::PelayananDelete', ['filter' => 'admin']); //delete
 
+//Artikel CRUD
+$routes->post('/artikel_tambah', 'AdminController::ArtikelTambah', ['filter' => 'admin']); //create
+$routes->post('/artikel_update', 'AdminController::ArtikelUpdate', ['filter' => 'admin']); //update
+$routes->post('/artikel_delete', 'AdminController::ArtikelDelete', ['filter' => 'admin']); //delete
+
 //Admin CRUD
 $routes->post('/admin_update', 'AdminController::AdminUpdate'); //update
 
-//END POST
+//END POST ADMIN
 
-//End Admin Routes
+// ============== End Admin Routes ==============
 
 
 /*
