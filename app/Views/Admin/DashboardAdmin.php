@@ -19,7 +19,7 @@
         <div class="container">
 
             <div class="section-title">
-                <h2>Wellcome Admin!</h2>
+                <h2>Wellcome <?= session()->get('nama') ?></h2>
             </div>
 
             <!-- Konten -->

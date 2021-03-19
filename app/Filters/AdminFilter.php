@@ -14,7 +14,7 @@ class AdminFilter implements FilterInterface
             
             session()->setFlashdata('pesan', 'Harap Login Ulang!');
             
-            return redirect()->to('pages/');
+            return redirect()->to('/');
         }
     }
 

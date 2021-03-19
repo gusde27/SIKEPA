@@ -37,8 +37,8 @@ $routes->setAutoRoute(true);
 $routes->get('/back', 'PagesController::back');
 
 // Login/Logout
-$routes->post('/loginPOST', 'PagesController::loginPOST');
-$routes->post('/logout', 'PagesController::logout');
+$routes->post('/loginpost', 'PagesController::LoginPost');
+$routes->get('/logout', 'PagesController::Logout');
 
 //Pages Routes
 $routes->get('/', 'PagesController::index');
@@ -49,15 +49,15 @@ $routes->get('/faq', 'PagesController::faq');
 //End Pages Routes
 
 //Admin Routes
-$routes->get('/dashboard', 'AdminController::Dashboard');
-$routes->get('/pelayanan-admin', 'AdminController::pelayanan_admin');
-$routes->get('/artikel-admin', 'AdminController::artikel_admin');
+$routes->get('/dashboard', 'AdminController::Dashboard', ['filter' => 'admin']);
+$routes->get('/pelayanan-admin', 'AdminController::pelayanan_admin', ['filter' => 'admin']);
+$routes->get('/artikel-admin', 'AdminController::artikel_admin', ['filter' => 'admin']);
 
 //POST
 //Operator CRUD
-$routes->post('/operator_tambah', 'AdminController::OperatorTambah'); //create
-$routes->post('/operator_update', 'AdminController::OperatorUpdate'); //update
-$routes->post('/operator_delete', 'AdminController::OperatorDelete'); //delete
+$routes->post('/operator_tambah', 'AdminController::OperatorTambah', ['filter' => 'admin']); //create
+$routes->post('/operator_update', 'AdminController::OperatorUpdate', ['filter' => 'admin']); //update
+$routes->post('/operator_delete', 'AdminController::OperatorDelete', ['filter' => 'admin']); //delete
 
 //Admin CRUD
 $routes->post('/admin_update', 'AdminController::AdminUpdate'); //update

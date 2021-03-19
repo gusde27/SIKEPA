@@ -87,26 +87,33 @@
                                     <img src="assets/img/logo-mataram.png" alt="Logo Kota Mataram" width="100%">
                                 </div>
                                 <div class="col-sm-7">
-                                    <form role="form" method="POST" action="/loginPOST">
+
+                                    <!-- alert -->
+                                    <?php if (session()->getFlashdata('pesan')) : ?>
+                                    <div class="alert alert-primary alert-dismissible fade show"
+                                        style="font-size: 12px;" role="alert">
+                                        <?= session()->getFlashdata('pesan'); ?>
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <?php endif; ?>
+                                    <!-- end alert -->
+
+                                    <form action="/loginpost" method="POST" id="login">
                                         <div class="form-group">
                                             <label for="username">Username</label>
                                             <input class="form-control form-control-sm input-sm" name="username"
-                                                id="inputsm" type="text" placeholder="Username"
-                                                data-match="#inputUsername" data-match-error="Username don't match"
-                                                required>
-                                            <!-- Error -->
-                                            <div class="help-block with-errors"></div>
+                                                id="inputsm" type="text" placeholder="Username" form="login" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="password">Password</label>
                                             <input class="form-control form-control-sm input-sm" name="password"
-                                                id="inputsm" type="text" placeholder="Password"
-                                                data-match="#inputPassword" data-match-error="Username don't match"
-                                                required>
+                                                id="inputsm" type="text" placeholder="Password" form="login" required>
                                         </div>
                                         <div class="form-group">
-                                            <button type="submit" style="width: 100%;"
-                                                class="btn btn-primary btn-sm">Login</button>
+                                            <button type="submit" style="width: 100%;" class="btn btn-primary btn-sm"
+                                                form="login">Login</button>
                                         </div>
                                     </form>
                                 </div>

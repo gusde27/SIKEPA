@@ -10,20 +10,23 @@ class PagesController extends BaseController
 {
 
 	//======= Login/Logout Sistem Informasi ========
-	public function logout() {
+	public function Logout() {
         
         session()->destroy();
 
         return redirect()->to('/');
     }
 
-    public function loginPOST()
+    public function LoginPost()
     {
         $request = \Config\Services::request();
         $user = new UserModel();
         
-        $pass = $request->getVar('password');
 		$username = $request->getVar('username');
+        $pass = $request->getVar('password');
+        
+        //dd($username, $pass);
+        
         
         $cek = $user->select('id, nama, username, password, level')->where([
             'username' => $username
@@ -49,17 +52,14 @@ class PagesController extends BaseController
                 return redirect()->to('dashboard');
             }
             
-
-            //return redirect()->to('dashboard');
-            // if ($dataSession->get()->getResultArray() == 'pts') {
-            //     return redirect()->to('dashboard');
-            // }
         } 
         else {
             session()->setFlashdata('pesan', 'Password Anda Salah!');
 
             return redirect()->back();
         }
+        
+
     }
 	//======= End Login/Logout Sistem Informasi ========
 	

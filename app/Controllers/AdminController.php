@@ -92,17 +92,30 @@ class AdminController extends BaseController
 
         $id_user = $request->getVar('id');
 
-        $userModel->save([
-            'id' => $id_user,
-            'nama' => $nama,
-            'username' => $username,
-            'password' => password_hash($password, PASSWORD_BCRYPT)
-        ]);
-
-        session()->setFlashdata('pesan', 'Data Operator Berhasil diubah!');
-
-        return redirect()->back();
-        return redirect()->to('dashboard');
+        if($password == ''){
+            $userModel->save([
+                'id' => $id_user,
+                'nama' => $nama,
+                'username' => $username
+            ]);
+    
+            session()->setFlashdata('pesan', 'Data Operator Berhasil diubah!');
+    
+            return redirect()->back();
+            return redirect()->to('dashboard');
+        } else {
+            $userModel->save([
+                'id' => $id_user,
+                'nama' => $nama,
+                'username' => $username,
+                'password' => password_hash($password, PASSWORD_BCRYPT)
+            ]);
+    
+            session()->setFlashdata('pesan', 'Data Operator Berhasil diubah!');
+    
+            return redirect()->back();
+            return redirect()->to('dashboard');
+        }
     }
 
     //Delete
@@ -138,17 +151,30 @@ class AdminController extends BaseController
 
         $id_admin = session()->get('id');
 
-        $userModel->save([
-            'id' => $id_admin,
-            'nama' => $nama,
-            'username' => $username,
-            'password' => password_hash($password, PASSWORD_BCRYPT)
-        ]);
-
-        session()->setFlashdata('pesan', 'Data Admin Berhasil diubah!');
-
-        return redirect()->back();
-        return redirect()->to('dashboard');
+        if($password == ''){
+            $userModel->save([
+                'id' => $id_admin,
+                'nama' => $nama,
+                'username' => $username
+            ]);
+    
+            session()->setFlashdata('pesan', 'Data Admin Berhasil diubah!');
+    
+            return redirect()->back();
+            return redirect()->to('dashboard');
+        } else {
+            $userModel->save([
+                'id' => $id_admin,
+                'nama' => $nama,
+                'username' => $username,
+                'password' => password_hash($password, PASSWORD_BCRYPT)
+            ]);
+    
+            session()->setFlashdata('pesan', 'Data Admin Berhasil diubah!');
+    
+            return redirect()->back();
+            return redirect()->to('dashboard');
+        }
     }
 
 	//======= END CRUD User Admin ========
