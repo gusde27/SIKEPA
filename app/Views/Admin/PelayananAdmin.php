@@ -41,7 +41,7 @@
                         <p>Tabel Pelayanan</p>
                     </div>
 
-                    <button style="font-size: 12px;" type="button" class="btn p-1 btn-sm btn-primary"
+                    <button style="font-size: 12px;" type="button" class="btn p-1 mb-4 btn-sm btn-primary"
                         data-toggle="modal" data-target="#operatorModal_C">
                         Tambah Pelayanan
                     </button>

@@ -38,7 +38,7 @@
 
                 <div class="row">
                     <?php if(session()->get('level') == 'admin') : ?>
-                    <div class="col-md-7">
+                    <div class="col-md-5">
                         <?php else : ?>
                         <div class="col-md">
                             <?php endif; ?>
@@ -86,7 +86,7 @@
                         </div>
 
                         <?php if(session()->get('level') != 'operator') : ?>
-                        <div class="col-md-5">
+                        <div class="col-md-7">
                             <!-- card Operator -->
                             <div class="card">
                                 <div class="card-body">
@@ -94,8 +94,9 @@
                                         <p>Operator Website</p>
                                     </div>
 
-                                    <button style="font-size: 10px;" type="button" class="btn p-1 btn-sm btn-primary"
-                                        data-toggle="modal" data-target="#operatorModal_C">
+                                    <button style="font-size: 10px;" type="button"
+                                        class="btn mb-4 p-1 btn-sm btn-primary" data-toggle="modal"
+                                        data-target="#operatorModal_C">
                                         Tambah Operator
                                     </button>
 

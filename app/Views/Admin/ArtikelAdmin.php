@@ -41,7 +41,7 @@
                         <p>Tabel Artikel</p>
                     </div>
 
-                    <button style="font-size: 12px;" type="button" class="btn p-1 btn-sm btn-primary"
+                    <button style="font-size: 12px;" type="button" class="btn mb-4 p-1 btn-sm btn-primary"
                         data-toggle="modal" data-target="#artikelModal_C">
                         Tambah Artikel
                     </button>
