@@ -10,7 +10,7 @@ class AdminFilter implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
-        if (session()->get('level') != "admin") {
+        if (session()->get('level') != "admin" && session()->get('level') != "operator") {
             
             session()->setFlashdata('pesan', 'Harap Login Ulang!');
             

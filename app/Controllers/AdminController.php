@@ -314,7 +314,7 @@ class AdminController extends BaseController
         $gambar = $request->getFile('gambar');
 
         $nama_gambar = $judul . "." . $gambar->getExtension();
-
+        
         $gambar->move("assets/img/artikel", $judul . "." . $gambar->getExtension(), true);
         
         $artikelModel->save([

@@ -44,6 +44,7 @@ $routes->get('/logout', 'PagesController::Logout');
 $routes->get('/', 'PagesController::index');
 $routes->get('/struktur-organisasi', 'PagesController::struktur_organisasi');
 $routes->get('/artikel', 'PagesController::artikel');
+$routes->get('/artikel/(:any)', 'PagesController::artikel_detail/$1'); //artikel detail
 $routes->get('/pelayanan', 'PagesController::pelayanan');
 $routes->get('/faq', 'PagesController::faq');
 //End Pages Routes
