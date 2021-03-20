@@ -12,7 +12,7 @@
                 <div>
                     <h1>Sistem Informasi Kelurahan Pagesangan</h1>
                     <h2>Kota Mataram, Nusa Tenggara Barat</h2>
-                    <a href="#" class="download-btn" s><i class="bx bxl-play-store"></i>Mulai</a>
+                    <a href="/artikel" class="download-btn" s><i class="bx bxl-play-store"></i>Mulai</a>
                     <!--
     <a href="#" class="download-btn"><i class="bx bxl-apple"></i> App Store</a>
     -->

@@ -28,7 +28,7 @@
 
             <?php foreach($artikel as $a) : ?>
             <a href="artikel/<?= $a['slug'] ?>">
-                <div class="card" style="color: black;">
+                <div class="card mb-3" style="color: black;">
                     <div class="card-body p-3">
                         <div class="row">
                             <div class="col-md-2">

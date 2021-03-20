@@ -32,8 +32,8 @@
                     $no = 1;
                     foreach($pelayanan as $p) : 
                     ?>
-                    <div class="card">
-                        <div class="card-body">
+                    <div class="card mb-2">
+                        <div class="card-body p-1">
                             <li data-aos="fade-up">
                                 <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" class="collapse"
                                     href="#accordion-list-<?= $p['id']; ?>"><?= $p['nama'] ?>
