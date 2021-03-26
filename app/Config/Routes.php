@@ -53,6 +53,7 @@ $routes->get('/faq', 'PagesController::faq');
 $routes->get('/dashboard', 'AdminController::Dashboard', ['filter' => 'admin']);
 $routes->get('/pelayanan-admin', 'AdminController::pelayanan_admin', ['filter' => 'admin']);
 $routes->get('/artikel-admin', 'AdminController::artikel_admin', ['filter' => 'admin']);
+$routes->get('/struktur-admin', 'AdminController::struktur_admin', ['filter' => 'admin']);
 
 //POST ADMIN
 //Struktur CRUD

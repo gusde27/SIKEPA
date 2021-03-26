@@ -7,6 +7,7 @@ use CodeIgniter\HTTP\RequestInterface;
 use App\Models\UserModel;
 use App\Models\ArtikelModel;
 use App\Models\PelayananModel;
+use App\Models\StrukturModel;
 
 class AdminController extends BaseController
 {
@@ -53,6 +54,19 @@ class AdminController extends BaseController
         ];
 
 		return view('Admin/ArtikelAdmin', $data);
+	}
+
+	public function struktur_admin()
+	{
+        $strukturModel = new StrukturModel;
+
+        $struktur = $strukturModel->get()->getResultArray();
+
+        $data = [
+            'struktur' => $struktur
+        ];
+
+		return view('Admin/StrukturAdmin', $data);
 	}
 	//======= End Halaman Sistem Informasi ========
 
@@ -436,56 +450,38 @@ class AdminController extends BaseController
     {
         $request = \Config\Services::request(); //aktifkan request
         
-        $artikelModel = new ArtikelModel();
+        $strukturModel = new StrukturModel();
 
-        if ($request->getFile('gambar') !=  '') 
+        if ($request->getVar('struktur') !=  '') 
         {
             
-        $id_artikel = $request->getVar('id_artikel');
+        $struktur = $request->getVar('struktur');
 
-        $judul = $request->getVar('judul');
-        $deskripsi = $request->getVar('deskripsi');
-
-        $slug = url_title($judul, '-', true);
-
-        $gambar = $request->getFile('gambar');
-        
-        $nama_gambar = $judul . "." . $gambar->getExtension();
-
-        $gambar->move("assets/img/artikel", $judul . "." . $gambar->getExtension(), true);
-        
-        $artikelModel->save([
-            'id' => $id_artikel,
-            'judul' => $judul,
-            'deskripsi' => $deskripsi,
-            'gambar' => $nama_gambar,
-            'slug' => $slug
+        $strukturModel->save([
+            'judul' => $struktur
             ]);
             
-        session()->setFlashdata('pesan', 'Data Artikel Berhasil diubah!');
+        session()->setFlashdata('pesan', 'Data Struktur Berhasil diubah!');
         
         return redirect()->back();
-        return redirect()->to('artikel-admin');
+        return redirect()->to('struktur-admin');
         } 
         else
         {
-        $id_artikel = $request->getVar('id_artikel');
-        $judul = $request->getVar('judul');
-        $deskripsi = $request->getVar('deskripsi');
+        $id_struktur = $request->getVar('id_struktur');
 
-        $slug = url_title($judul, '-', true);
+        $struktur = $request->getVar('struktur');
+
         
-        $artikelModel->save([
-            'id' => $id_artikel,
-            'judul' => $judul,
-            'deskripsi' => $deskripsi,
-            'slug' => $slug
+        $strukturModel->save([
+            'id' => $id_struktur,
+            'isi' => $struktur
             ]);
             
-        session()->setFlashdata('pesan', 'Data Artikel Berhasil diubah!');
+        session()->setFlashdata('pesan', 'Data Struktur Berhasil diubah!');
         
         return redirect()->back();
-        return redirect()->to('artikel-admin');
+        return redirect()->to('struktur-admin');
         }
         
     }

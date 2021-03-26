@@ -48,6 +48,7 @@
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
                     <li class="active"><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/struktur-admin">Struktur Organisasi</a></li>
                     <li><a href="/pelayanan-admin">Pelayanan</a></li>
                     <li><a href="/artikel-admin">Artikel</a></li>
 
