@@ -26,20 +26,10 @@
                 <h2>Susunan Organisasi</h2>
             </div>
 
-            <p>
-                Kantor Lurah Pagesangan dipimpin oleh seorang Lurah kemudian dibawahnya terdiri dari Seklur, Kasi
-                Pemerintahan, Kasi Ekonomi, Fisik, Sarana dan Prasarana, Kasi Sosial dan Pemberdayaan Masyarakat serta
-                staf.
-                Jumlah Pegawai Kantor Lurah Pagesangan berjumlah 11 orang terdiri dari :
-            <ul>
-                <li>Lurah : 1 Orang</li>
-                <li>Sekretaris : 1 Orang</li>
-                <li>Kasi : 2 Orang</li>
-                <li>Staf PNS : 2 Orang</li>
-                <li>Staf Honorer : 3 Orang</li>
-                <li>Babinmaspol : 1 Orang</li>
-                <li>Babinsa : 1 Orang</li>
-            </ul>
+            <p style="white-space: pre-line;">
+                <?php foreach($struktur as $s): ?>
+                <?= $s['isi'] ?>
+                <?php endforeach; ?>
             </p>
 
         </div>

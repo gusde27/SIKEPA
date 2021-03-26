@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\UserModel;
 use App\Models\ArtikelModel;
 use App\Models\PelayananModel;
+use App\Models\StrukturModel;
 
 class PagesController extends BaseController
 {
@@ -77,7 +78,15 @@ class PagesController extends BaseController
 	
 	public function struktur_organisasi()
 	{
-		return view('Pages/StrukturPages');
+        $strukturModel = new StrukturModel;
+
+        $struktur = $strukturModel->get()->getResultArray();
+
+        $data = [
+            'struktur' => $struktur
+        ];
+
+		return view('Pages/StrukturPages', $data);
 	}
 
 	public function pelayanan()
