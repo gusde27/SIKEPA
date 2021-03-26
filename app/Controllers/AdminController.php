@@ -66,6 +66,7 @@ class AdminController extends BaseController
             'struktur' => $struktur
         ];
 
+        //dd($struktur);
 		return view('Admin/StrukturAdmin', $data);
 	}
 	//======= End Halaman Sistem Informasi ========
@@ -452,22 +453,6 @@ class AdminController extends BaseController
         
         $strukturModel = new StrukturModel();
 
-        if ($request->getVar('struktur') !=  '') 
-        {
-            
-        $struktur = $request->getVar('struktur');
-
-        $strukturModel->save([
-            'judul' => $struktur
-            ]);
-            
-        session()->setFlashdata('pesan', 'Data Struktur Berhasil diubah!');
-        
-        return redirect()->back();
-        return redirect()->to('struktur-admin');
-        } 
-        else
-        {
         $id_struktur = $request->getVar('id_struktur');
 
         $struktur = $request->getVar('struktur');
@@ -482,7 +467,6 @@ class AdminController extends BaseController
         
         return redirect()->back();
         return redirect()->to('struktur-admin');
-        }
         
     }
 

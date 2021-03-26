@@ -41,10 +41,10 @@
                     <!-- Text Area -->
                     <form method="POST" action="/struktur_update" id="strukturUpdate">
                         <?php foreach($struktur as $s ) : ?>
+                        <input type="text" name="id_struktur" value="<?= $s['id'] ?>" hidden="true">
                         <div class="form-group">
-                            <label for="struktur">Struktur</label>
                             <textarea class="form-control form-control-sm input-sm" name="struktur" id="struktur"
-                                form="strukturUpdate" rows="6"><?= $s['isi'] ?></textarea>
+                                form="strukturUpdate" rows="15"><?= $s['isi'] ?></textarea>
                         </div>
                         <?php endforeach; ?>
                         <button type="submit" style="width: 100%;" form="strukturUpdate"
