@@ -429,5 +429,68 @@ class AdminController extends BaseController
     }
 	//======= END CRUD Artikel ========
 
+    //======= CRUD Struktur ========
+	
+    //Update
+    public function StrukturUpdate()
+    {
+        $request = \Config\Services::request(); //aktifkan request
+        
+        $artikelModel = new ArtikelModel();
+
+        if ($request->getFile('gambar') !=  '') 
+        {
+            
+        $id_artikel = $request->getVar('id_artikel');
+
+        $judul = $request->getVar('judul');
+        $deskripsi = $request->getVar('deskripsi');
+
+        $slug = url_title($judul, '-', true);
+
+        $gambar = $request->getFile('gambar');
+        
+        $nama_gambar = $judul . "." . $gambar->getExtension();
+
+        $gambar->move("assets/img/artikel", $judul . "." . $gambar->getExtension(), true);
+        
+        $artikelModel->save([
+            'id' => $id_artikel,
+            'judul' => $judul,
+            'deskripsi' => $deskripsi,
+            'gambar' => $nama_gambar,
+            'slug' => $slug
+            ]);
+            
+        session()->setFlashdata('pesan', 'Data Artikel Berhasil diubah!');
+        
+        return redirect()->back();
+        return redirect()->to('artikel-admin');
+        } 
+        else
+        {
+        $id_artikel = $request->getVar('id_artikel');
+        $judul = $request->getVar('judul');
+        $deskripsi = $request->getVar('deskripsi');
+
+        $slug = url_title($judul, '-', true);
+        
+        $artikelModel->save([
+            'id' => $id_artikel,
+            'judul' => $judul,
+            'deskripsi' => $deskripsi,
+            'slug' => $slug
+            ]);
+            
+        session()->setFlashdata('pesan', 'Data Artikel Berhasil diubah!');
+        
+        return redirect()->back();
+        return redirect()->to('artikel-admin');
+        }
+        
+    }
+
+	//=======  END CRUD Struktur ========
+
     
 }
