@@ -55,6 +55,9 @@ $routes->get('/pelayanan-admin', 'AdminController::pelayanan_admin', ['filter' =
 $routes->get('/artikel-admin', 'AdminController::artikel_admin', ['filter' => 'admin']);
 
 //POST ADMIN
+//Struktur CRUD
+$routes->post('/struktur_update', 'AdminController::StrukturUpdate', ['filter' => 'admin']); //update
+
 //Operator CRUD
 $routes->post('/operator_tambah', 'AdminController::OperatorTambah', ['filter' => 'admin']); //create
 $routes->post('/operator_update', 'AdminController::OperatorUpdate', ['filter' => 'admin']); //update
