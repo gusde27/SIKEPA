@@ -8,6 +8,9 @@ use App\Models\UserModel;
 use App\Models\ArtikelModel;
 use App\Models\PelayananModel;
 use App\Models\StrukturModel;
+use App\Models\VisiModel;
+use App\Models\MisiModel;
+use App\Models\GaleriModel;
 
 class AdminController extends BaseController
 {
@@ -68,6 +71,26 @@ class AdminController extends BaseController
 
         //dd($struktur);
 		return view('Admin/StrukturAdmin', $data);
+	}
+
+	public function home_admin()
+	{
+        $visiModel = new VisiModel;
+        $misiModel = new MisiModel;
+        $galeriModel = new GaleriModel;
+
+        $visi = $visiModel->get()->getResultArray();
+        $misi = $misiModel->get()->getResultArray();
+        $galeri = $galeriModel->get()->getResultArray();
+
+        $data = [
+            'visi' => $visi,
+            'misi' => $misi,
+            'galeri' => $galeri
+        ];
+
+        //dd($struktur);
+		return view('Admin/HomeAdmin', $data);
 	}
 	//======= End Halaman Sistem Informasi ========
 
