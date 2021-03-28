@@ -65,6 +65,11 @@ $routes->post('/visi_tambah', 'AdminController::VisiTambah', ['filter' => 'admin
 $routes->post('/visi_update', 'AdminController::VisiUpdate', ['filter' => 'admin']); //update
 $routes->post('/visi_delete', 'AdminController::VisiDelete', ['filter' => 'admin']); //delete
 
+//misi CRUD
+$routes->post('/misi_tambah', 'AdminController::MisiTambah', ['filter' => 'admin']); //create
+$routes->post('/misi_update', 'AdminController::MisiUpdate', ['filter' => 'admin']); //update
+$routes->post('/misi_delete', 'AdminController::MisiDelete', ['filter' => 'admin']); //delete
+
 //Operator CRUD
 $routes->post('/operator_tambah', 'AdminController::OperatorTambah', ['filter' => 'admin']); //create
 $routes->post('/operator_update', 'AdminController::OperatorUpdate', ['filter' => 'admin']); //update

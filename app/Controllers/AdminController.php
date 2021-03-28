@@ -569,5 +569,78 @@ class AdminController extends BaseController
     }
 	//======= END CRUD Visi ========
 
+    //======= CRUD misi ========
+
+	//Create
+	public function MisiTambah()
+    {
+        $validation = \Config\Services::validation();
+        $request = \Config\Services::request(); //aktifkan request
+
+        if (!$this->validate([
+            'misi' => 'required',
+        ])) {
+
+            session()->setFlashdata('pesan', 'Data Misi gagal ditambahkan!');
+
+            return redirect()->back();
+            return redirect()->to('home-admin')->withInput()->with('validation', $validation);
+        }
+
+        $misiModel = new MisiModel();
+
+        $misi = $request->getVar('misi');
+
+        $misiModel->save([
+            'misi' => $misi
+            ]);
+            
+        session()->setFlashdata('pesan', 'Data Misi Berhasil ditambahkan!');
+        
+        return redirect()->back();
+        return redirect()->to('home-admin')->with('validation', $validation);
+    }
+    
+    //Update
+    public function MisiUpdate()
+    {
+        $request = \Config\Services::request(); //aktifkan request
+        
+        $misiModel = new MisiModel();
+        
+        $misi = $request->getVar('misi');
+        
+        $id_misi = $request->getVar('id_misi');
+        
+        $misiModel->save([
+                'id' => $id_misi,
+                'misi' => $misi
+        ]);
+    
+        session()->setFlashdata('pesan', 'Data Misi Berhasil diubah!');
+    
+        return redirect()->back();
+        return redirect()->to('home-admin');
+        
+    }
+
+    //Delete
+    public function MisiDelete()
+    {
+        $request = \Config\Services::request(); //aktifkan request
+
+        $misiModel = new MisiModel();
+
+        $id = $request->getVar('id_misi');
+
+        $misiModel->delete($id);
+
+        session()->setFlashdata('pesan', 'Data Misi Berhasil dihapus');
+
+        return redirect()->back();
+        return redirect()->to('home-admin');
+    }
+	//======= END CRUD misi ========
+
     
 }

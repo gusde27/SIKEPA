@@ -118,7 +118,7 @@
 
                     <!-- Misi Table -->
                     <div class="table-responsive" style="font-size: 14px;">
-                        <table id="datalol" class="table table-striped table-bordered mt-3" style="color:black;">
+                        <table id="datalol1" class="table table-striped table-bordered mt-3" style="color:black;">
                             <thead>
                                 <tr>
                                     <th scope="col" style="text-align:center;">No</th>
@@ -149,6 +149,7 @@
                                         <!-- modal tambah operator -->
                                         <?php include('Modal/Misi/MisiModal_U.php'); ?>
                                         <!-- end modal tambah operator -->
+                                        <div class="m-1"></div>
 
                                         <button style="font-size: 12px;" type="button" class="btn p-1 btn-sm btn-danger"
                                             data-toggle="modal" data-target="#MisiModal_D<?= $no ?>">
