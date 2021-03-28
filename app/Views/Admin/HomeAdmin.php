@@ -35,7 +35,62 @@
             <?php endif; ?>
             <!-- end alert -->
 
-            <div class="card">
+            <!-- Card Visi -->
+            <div class="card mb-3">
+                <div class="card-body">
+
+                    <!-- Table Visi -->
+                    <div class="table-responsive" style="font-size: 14px;">
+                        <table id="datalol" class="table table-striped table-bordered mt-3" style="color:black;">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="text-align:center;">No</th>
+                                    <th scope="col">Visi</th>
+                                    <th scope="col">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- looping -->
+                                <?php
+                                    $no=1; 
+                                    foreach($visi as $v) :
+                                ?>
+                                <tr>
+                                    <th scope="row" style="text-align: center;">
+                                        <?= $no++; ?>
+                                    </th>
+                                    <td>
+                                        <?= $v['visi']; ?>
+                                    </td>
+                                    <td>
+                                        <button style="font-size: 12px;" type="button"
+                                            class="btn p-1 btn-sm btn-primary" data-toggle="modal"
+                                            data-target="#VisiModal_U<?= $no ?>">
+                                            Update
+                                        </button>
+
+
+
+                                        <button style="font-size: 12px;" type="button" class="btn p-1 btn-sm btn-danger"
+                                            data-toggle="modal" data-target="#VisiModal_D<?= $no ?>">
+                                            Delete
+                                        </button>
+
+
+                                    </td>
+                                </tr>
+                                <?php endforeach; ?>
+                                <!-- End looping -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- End Table Visi -->
+
+                </div>
+            </div>
+            <!-- End Card Visi -->
+            <!-- Card Misi -->
+            <div class="card mb-3">
                 <div class="card-body">
 
                     <!-- Text Area -->
@@ -44,6 +99,19 @@
 
                 </div>
             </div>
+            <!-- End Card Misi -->
+            <!-- Card Galeri -->
+            <div class="card mb-3">
+                <div class="card-body">
+
+                    <!-- Text Area -->
+
+                    <!-- End Text Area -->
+
+                </div>
+            </div>
+            <!-- End Card Galeri -->
+
             <!-- End Konten -->
 
         </div>
