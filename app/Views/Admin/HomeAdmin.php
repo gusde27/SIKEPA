@@ -39,6 +39,11 @@
             <div class="card mb-3">
                 <div class="card-body">
 
+                    <button style="font-size: 12px;" type="button" class="btn p-1 mb-4 btn-sm btn-primary"
+                        data-toggle="modal" data-target="#VisiModal_C">
+                        Tambah Visi
+                    </button>
+
                     <!-- Table Visi -->
                     <div class="table-responsive" style="font-size: 14px;">
                         <table id="datalol" class="table table-striped table-bordered mt-3" style="color:black;">
