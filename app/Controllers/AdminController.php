@@ -317,7 +317,7 @@ class AdminController extends BaseController
         session()->setFlashdata('pesan', 'Data Pelayanan Berhasil dihapus');
 
         return redirect()->back();
-        return redirect()->to('dashboard');
+        return redirect()->to('pelayanan-admin');
     }
 	//======= END CRUD Pelayanan ========
 
@@ -494,6 +494,80 @@ class AdminController extends BaseController
     }
 
 	//=======  END CRUD Struktur ========
+
+    
+    //======= CRUD Visi ========
+
+	//Create
+	public function VisiTambah()
+    {
+        $validation = \Config\Services::validation();
+        $request = \Config\Services::request(); //aktifkan request
+
+        if (!$this->validate([
+            'visi' => 'required',
+        ])) {
+
+            session()->setFlashdata('pesan', 'Data Visi gagal ditambahkan!');
+
+            return redirect()->back();
+            return redirect()->to('home-admin')->withInput()->with('validation', $validation);
+        }
+
+        $visiModel = new VisiModel();
+
+        $visi = $request->getVar('visi');
+
+        $visiModel->save([
+            'visi' => $visi
+            ]);
+            
+        session()->setFlashdata('pesan', 'Data Visi Berhasil ditambahkan!');
+        
+        return redirect()->back();
+        return redirect()->to('home-admin')->with('validation', $validation);
+    }
+    
+    //Update
+    public function VisiUpdate()
+    {
+        $request = \Config\Services::request(); //aktifkan request
+        
+        $visiModel = new VisiModel();
+        
+        $visi = $request->getVar('visi');
+        
+        $id_visi = $request->getVar('id_visi');
+        
+        $visiModel->save([
+                'id' => $id_visi,
+                'visi' => $visi
+        ]);
+    
+        session()->setFlashdata('pesan', 'Data Visi Berhasil diubah!');
+    
+        return redirect()->back();
+        return redirect()->to('home-admin');
+        
+    }
+
+    //Delete
+    public function VisiDelete()
+    {
+        $request = \Config\Services::request(); //aktifkan request
+
+        $visiModel = new VisiModel();
+
+        $id = $request->getVar('id_visi');
+
+        $visiModel->delete($id);
+
+        session()->setFlashdata('pesan', 'Data Visi Berhasil dihapus');
+
+        return redirect()->back();
+        return redirect()->to('home-admin');
+    }
+	//======= END CRUD Visi ========
 
     
 }
