@@ -67,12 +67,11 @@
                 <div class="col-md-8 pt-4" data-aos="fade-up">
                     <h3>Visi</h3>
                     <ul>
-                        <li><i class="icofont-check"></i> Mewujudkan Kelurahan Pagesangan Yang Terang Benderang (VISI No
-                            1)
+                        <?php foreach($visi as $v) : ?>
+                        <li><i class="icofont-check"></i>
+                            <?= $v['visi'] ?>
                         </li>
-                        <li><i class="icofont-check"></i> Mataram Indah, tertata, Aman, Damai, Maju dan Religius (VISI
-                            No 2)
-                        </li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
             </div>
@@ -84,23 +83,11 @@
                 <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
                     <h3>Misi</h3>
                     <ul>
+                        <?php foreach($misi as $m) : ?>
                         <li><i class="icofont-check"></i>
-                            Mewujudkan masyarakat Kelurahan Pagesangan sebagai Kelurahan yang merupakan nama Ibu kota
-                            Mataram dan Nama Ibu Kota Provinsi NTB sebagai kota yang indah (MISI No 1)
+                            <?= $m['misi'] ?>
                         </li>
-                        <li><i class="icofont-check"></i>
-                            Meningkatkan kualitas pelayanan publik berdasarkan prinsip tata pemerintahan yang baik dalam
-                            bentuk penataan administrasi, pemerintahan, pembangunan dan pelayanan (MISI No 2)
-                        </li>
-                        <li><i class="icofont-check"></i>
-                            Mewujudkan masyarakat Kelurahan Pagesangan yang penduduknya haterogen untuk tetap memelihara
-                            keamanan, ketentraman, ketertiban dan kedamaian ditengah masyarakat dan saling berketerima (
-                            toleransi ) yang dijiwai oleh nilai-nilai agama/religi dan kearifan lokal (local wisdom)
-                            (MISI No 3)
-                        </li>
-                        <li><i class="icofont-check"></i>
-                            Meningkatkan kwalitas SDM yang handal untuk mendorong daya saing daerah (MISI No 4)
-                        </li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
             </div>

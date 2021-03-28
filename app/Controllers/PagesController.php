@@ -6,6 +6,8 @@ use App\Models\UserModel;
 use App\Models\ArtikelModel;
 use App\Models\PelayananModel;
 use App\Models\StrukturModel;
+use App\Models\VisiModel;
+use App\Models\MisiModel;
 
 class PagesController extends BaseController
 {
@@ -73,7 +75,18 @@ class PagesController extends BaseController
 	//======= Halaman Sistem Informasi ========
 	public function index()
 	{
-		return view('Pages/HomePages');
+        $visiModel = new VisiModel;
+        $misiModel = new MisiModel;
+
+        $visi = $visiModel->get()->getResultArray();
+        $misi = $misiModel->get()->getResultArray();
+
+        $data = [
+            'visi' => $visi,
+            'misi' => $misi
+        ];
+
+		return view('Pages/HomePages', $data);
 	}
 	
 	public function struktur_organisasi()
