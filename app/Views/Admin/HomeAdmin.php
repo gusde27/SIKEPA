@@ -78,13 +78,18 @@
                                             Update
                                         </button>
 
-
+                                        <!-- modal tambah operator -->
+                                        <?php include('Modal/Visi/VisiModal_U.php'); ?>
+                                        <!-- end modal tambah operator -->
 
                                         <button style="font-size: 12px;" type="button" class="btn p-1 btn-sm btn-danger"
                                             data-toggle="modal" data-target="#VisiModal_D<?= $no ?>">
                                             Delete
                                         </button>
 
+                                        <!-- modal tambah operator -->
+                                        <?php include('Modal/Visi/VisiModal_D.php'); ?>
+                                        <!-- end modal tambah operator -->
 
                                     </td>
                                 </tr>
