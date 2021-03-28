@@ -1,4 +1,4 @@
-<!-- ======= Operator Modal ======= -->
+<!-- ======= Visi Modal ======= -->
 
 <!-- Modal -->
 <div class="modal fade" id="VisiModal_C" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
@@ -37,4 +37,4 @@
         </div>
     </div>
 </div>
-<!-- ======= End Operator Modal ======= -->
+<!-- ======= End Visi Modal ======= -->

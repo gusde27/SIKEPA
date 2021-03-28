@@ -44,6 +44,10 @@
                         Tambah Visi
                     </button>
 
+                    <!-- modal tambah operator -->
+                    <?php include('Modal/Visi/VisiModal_C.php'); ?>
+                    <!-- end modal tambah operator -->
+
                     <!-- Table Visi -->
                     <div class="table-responsive" style="font-size: 14px;">
                         <table id="datalol" class="table table-striped table-bordered mt-3" style="color:black;">
