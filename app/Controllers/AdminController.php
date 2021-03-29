@@ -658,9 +658,9 @@ class AdminController extends BaseController
 
         $galeri = $request->getFile('gambar');
 
-        $nama = $galeri->getRandomName();
+        $nama_galeri = $galeri->getRandomName();
 
-        $nama_galeri = $nama . "." . $galeri->getExtension();
+        //$nama_galeri = $nama . "." . $galeri->getExtension();
         
         $galeri->move("assets/img/galeri", $nama_galeri, true);
         

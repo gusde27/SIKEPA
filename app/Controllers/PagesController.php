@@ -8,6 +8,7 @@ use App\Models\PelayananModel;
 use App\Models\StrukturModel;
 use App\Models\VisiModel;
 use App\Models\MisiModel;
+use App\Models\GaleriModel;
 
 class PagesController extends BaseController
 {
@@ -77,13 +78,16 @@ class PagesController extends BaseController
 	{
         $visiModel = new VisiModel;
         $misiModel = new MisiModel;
+        $galeriModel = new GaleriModel;
 
         $visi = $visiModel->get()->getResultArray();
         $misi = $misiModel->get()->getResultArray();
+        $galeri = $galeriModel->get()->getResultArray();
 
         $data = [
             'visi' => $visi,
-            'misi' => $misi
+            'misi' => $misi,
+            'galeri' => $galeri
         ];
 
 		return view('Pages/HomePages', $data);

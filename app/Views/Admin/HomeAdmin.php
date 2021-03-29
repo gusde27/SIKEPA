@@ -173,7 +173,7 @@
             </div>
             <!-- End Card Misi -->
             <!-- Card Galeri -->
-            <div class="card mb-3">
+            <div class="card mb-5">
                 <div class="card-body">
 
                     <button style="font-size: 12px;" type="button" class="btn mb-3 p-1 btn-sm btn-primary"
@@ -206,7 +206,9 @@
                                         <?= $no++; ?>
                                     </th>
                                     <td>
-                                        <img src="assets/img/galeri/<?= $g['gambar']; ?>" width="100%">
+                                        <div style="align: center;">
+                                            <img src="assets/img/galeri/<?= $g['gambar']; ?>" width="50%">
+                                        </div>
                                     </td>
                                     <td>
 

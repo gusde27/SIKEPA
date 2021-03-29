@@ -105,8 +105,10 @@
             </div>
 
             <div class="owl-carousel gallery-carousel" data-aos="fade-up">
-                <a href="assets/img/gallery/foto-1.png" class="venobox" data-gall="gallery-carousel"><img
-                        src="assets/img/gallery/foto-1.png" alt=""></a>
+                <?php foreach($galeri as $g) : ?>
+                <a href="assets/img/gallery/<?= $g['gambar'] ?>" class="venobox" data-gall="gallery-carousel"><img
+                        src="assets/img/gallery/<?= $g['gambar'] ?>"></a>
+                <?php endforeach; ?>
             </div>
 
         </div>
