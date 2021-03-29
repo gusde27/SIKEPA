@@ -206,9 +206,7 @@
                                         <?= $no++; ?>
                                     </th>
                                     <td>
-                                        <div style="align: center;">
-                                            <img src="assets/img/galeri/<?= $g['gambar']; ?>" width="50%">
-                                        </div>
+                                        <img src="assets/img/galeri/<?= $g['gambar']; ?>" width="50%">
                                     </td>
                                     <td>
 
