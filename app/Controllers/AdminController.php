@@ -651,60 +651,35 @@ class AdminController extends BaseController
         $validation = \Config\Services::validation();
         $request = \Config\Services::request(); //aktifkan request
 
-        if (!$this->validate([
-            'gmabar' => 'required',
-        ])) {
-
-            session()->setFlashdata('pesan', 'Data Gambar gagal ditambahkan!');
-
-            return redirect()->back();
-            return redirect()->to('home-admin')->withInput()->with('validation', $validation);
-        }
-
-        $artikelModel = new ArtikelModel();
+        $galeriModel = new GaleriModel();
 
         if ($request->getFile('gambar') !=  '') 
         {
-        $judul = $request->getVar('judul');
-        $deskripsi = $request->getVar('deskripsi');
 
-        $slug = url_title($judul, '-', true);
+        $galeri = $request->getFile('gambar');
 
-        $gambar = $request->getFile('gambar');
+        $nama = $galeri->getRandomName();
 
-        $nama_gambar = $judul . "." . $gambar->getExtension();
+        $nama_galeri = $nama . "." . $galeri->getExtension();
         
-        $gambar->move("assets/img/artikel", $judul . "." . $gambar->getExtension(), true);
+        $galeri->move("assets/img/galeri", $nama_galeri, true);
         
-        $artikelModel->save([
-            'judul' => $judul,
-            'deskripsi' => $deskripsi,
-            'gambar' => $nama_gambar,
-            'slug' => $slug
+        $galeriModel->save([
+            'gambar' => $nama_galeri
             ]);
             
-        session()->setFlashdata('pesan', 'Data Artikel Berhasil ditambahkan!');
+        session()->setFlashdata('pesan', 'Data galeri Berhasil ditambahkan!');
         
         return redirect()->back();
-        return redirect()->to('artikel-admin');
+        return redirect()->to('home-admin');
         } 
         else
         {
-        $judul = $request->getVar('judul');
-        $deskripsi = $request->getVar('deskripsi');
-
-        $slug = url_title($judul, '-', true);
-        
-        $artikelModel->save([
-            'judul' => $judul,
-            'deskripsi' => $deskripsi,
-            'slug' => $slug
-            ]);
             
-        session()->setFlashdata('pesan', 'Data Artikel Berhasil ditambahkan!');
+        session()->setFlashdata('pesan', 'Data Gambar Gagal ditambahkan!');
         
         return redirect()->back();
-        return redirect()->to('artikel-admin')->with('validation', $validation);
+        return redirect()->to('home-admin')->with('validation', $validation);
         }
     }
 
@@ -719,7 +694,7 @@ class AdminController extends BaseController
         $nama_gambar = $request->getVar('nama_gambar');
 
         $galeriModel->delete($id_gambar);
-        unlink('assets/img/artikel/' . $nama_gambar);
+        unlink('assets/img/galeri/' . $nama_gambar);
 
         session()->setFlashdata('pesan', 'Data Gambar Berhasil dihapus');
 

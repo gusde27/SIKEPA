@@ -7,10 +7,10 @@
         <div class="modal-dialog modal-lg vertical-align-center" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5>Galeri/h5>
-                        <button type="button btn-sm" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                    <h5>Galeri</h5>
+                    <button type="button btn-sm" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <!-- Isi Modal -->
                 <div class="modal-body" style="font-size: 14px;">

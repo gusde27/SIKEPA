@@ -176,7 +176,7 @@
             <div class="card mb-3">
                 <div class="card-body">
 
-                    <button style="font-size: 12px;" type="button" class="btn p-1 btn-sm btn-primary"
+                    <button style="font-size: 12px;" type="button" class="btn mb-3 p-1 btn-sm btn-primary"
                         data-toggle="modal" data-target="#GaleriModal_C">
                         Tambah Gambar
                     </button>
