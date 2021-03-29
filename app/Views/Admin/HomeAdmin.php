@@ -176,9 +176,57 @@
             <div class="card mb-3">
                 <div class="card-body">
 
-                    <!-- Text Area -->
+                    <button style="font-size: 12px;" type="button" class="btn p-1 btn-sm btn-danger" data-toggle="modal"
+                        data-target="#GaleriModal_C">
+                        Tambah Gambar
+                    </button>
 
-                    <!-- End Text Area -->
+                    <!-- modal tambah operator -->
+                    <?php include('Modal/Galeri/GaleriModal_C.php'); ?>
+                    <!-- end modal tambah operator -->
+
+                    <!-- Galeri Table -->
+                    <div class="table-responsive" style="font-size: 14px;">
+                        <table id="datalol1" class="table table-striped table-bordered mt-3" style="color:black;">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="text-align:center;">No</th>
+                                    <th scope="col">Gambar</th>
+                                    <th scope="col">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- looping -->
+                                <?php
+                                    $no=1; 
+                                    foreach($galeri as $g) :
+                                ?>
+                                <tr>
+                                    <th scope="row" style="text-align: center;">
+                                        <?= $no++; ?>
+                                    </th>
+                                    <td>
+                                        <img src="assets/img/galeri/<?= $g['gambar']; ?>" width="100%">
+                                    </td>
+                                    <td>
+
+                                        <button style="font-size: 12px;" type="button" class="btn p-1 btn-sm btn-danger"
+                                            data-toggle="modal" data-target="#GaleriModal_D<?= $no ?>">
+                                            Delete
+                                        </button>
+
+                                        <!-- modal tambah operator -->
+                                        <?php include('Modal/Galeri/GaleriModal_D.php'); ?>
+                                        <!-- end modal tambah operator -->
+
+                                    </td>
+                                </tr>
+                                <?php endforeach; ?>
+                                <!-- End looping -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- End Galeri Table -->
 
                 </div>
             </div>
