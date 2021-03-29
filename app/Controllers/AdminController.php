@@ -642,5 +642,92 @@ class AdminController extends BaseController
     }
 	//======= END CRUD misi ========
 
+
+    //======= CRUD Galeri ========
+
+	//Create
+	public function GaleriTambah()
+    {
+        $validation = \Config\Services::validation();
+        $request = \Config\Services::request(); //aktifkan request
+
+        if (!$this->validate([
+            'gmabar' => 'required',
+        ])) {
+
+            session()->setFlashdata('pesan', 'Data Gambar gagal ditambahkan!');
+
+            return redirect()->back();
+            return redirect()->to('home-admin')->withInput()->with('validation', $validation);
+        }
+
+        $artikelModel = new ArtikelModel();
+
+        if ($request->getFile('gambar') !=  '') 
+        {
+        $judul = $request->getVar('judul');
+        $deskripsi = $request->getVar('deskripsi');
+
+        $slug = url_title($judul, '-', true);
+
+        $gambar = $request->getFile('gambar');
+
+        $nama_gambar = $judul . "." . $gambar->getExtension();
+        
+        $gambar->move("assets/img/artikel", $judul . "." . $gambar->getExtension(), true);
+        
+        $artikelModel->save([
+            'judul' => $judul,
+            'deskripsi' => $deskripsi,
+            'gambar' => $nama_gambar,
+            'slug' => $slug
+            ]);
+            
+        session()->setFlashdata('pesan', 'Data Artikel Berhasil ditambahkan!');
+        
+        return redirect()->back();
+        return redirect()->to('artikel-admin');
+        } 
+        else
+        {
+        $judul = $request->getVar('judul');
+        $deskripsi = $request->getVar('deskripsi');
+
+        $slug = url_title($judul, '-', true);
+        
+        $artikelModel->save([
+            'judul' => $judul,
+            'deskripsi' => $deskripsi,
+            'slug' => $slug
+            ]);
+            
+        session()->setFlashdata('pesan', 'Data Artikel Berhasil ditambahkan!');
+        
+        return redirect()->back();
+        return redirect()->to('artikel-admin')->with('validation', $validation);
+        }
+    }
+
+    //Delete
+    public function GaleriDelete()
+    {
+        $request = \Config\Services::request(); //aktifkan request
+
+        $galeriModel = new GaleriModel();
+
+        $id_gambar = $request->getVar('id_gambar');
+        $nama_gambar = $request->getVar('nama_gambar');
+
+        $galeriModel->delete($id_gambar);
+        unlink('assets/img/artikel/' . $nama_gambar);
+
+        session()->setFlashdata('pesan', 'Data Gambar Berhasil dihapus');
+
+        return redirect()->back();
+        return redirect()->to('home-admin');
+    }
+	//======= END CRUD Galeri ========
+
+
     
 }

@@ -176,8 +176,8 @@
             <div class="card mb-3">
                 <div class="card-body">
 
-                    <button style="font-size: 12px;" type="button" class="btn p-1 btn-sm btn-danger" data-toggle="modal"
-                        data-target="#GaleriModal_C">
+                    <button style="font-size: 12px;" type="button" class="btn p-1 btn-sm btn-primary"
+                        data-toggle="modal" data-target="#GaleriModal_C">
                         Tambah Gambar
                     </button>
 
@@ -187,7 +187,7 @@
 
                     <!-- Galeri Table -->
                     <div class="table-responsive" style="font-size: 14px;">
-                        <table id="datalol1" class="table table-striped table-bordered mt-3" style="color:black;">
+                        <table id="datalol2" class="table table-striped table-bordered mt-3" style="color:black;">
                             <thead>
                                 <tr>
                                     <th scope="col" style="text-align:center;">No</th>
