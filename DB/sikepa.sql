@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2021 at 07:53 AM
+-- Generation Time: Mar 30, 2021 at 03:10 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -58,6 +58,16 @@ CREATE TABLE `faq` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `faq`
+--
+
+INSERT INTO `faq` (`id`, `pertanyaan`, `jawaban`, `created_at`, `updated_at`) VALUES
+(2, 'Apa itu SIKEPA?', 'Sistem Informasi Kelurahan Pagesangan', '2021-03-30 07:59:05', '2021-03-30 07:59:05'),
+(3, 'Apa Manfaat SIKEPA?', 'Membantu Masyarat mengetahui profil maupun Pelayanan dan berita terbaru di kelurahan pagesangan\r\n', '2021-03-30 07:59:45', '2021-03-30 07:59:45'),
+(4, 'Keunggulan SIKEPA?', 'Bisa diakses disegala macam teknologi informasi (Website)', '2021-03-30 08:00:50', '2021-03-30 08:00:50'),
+(5, 'Siapa Pembuatan SIKEPA?', 'I Gede Bagus WIrawan', '2021-03-30 08:01:24', '2021-03-30 08:01:24');
 
 -- --------------------------------------------------------
 
@@ -168,7 +178,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `nama`, `username`, `password`, `level`, `created_at`, `updated_at`) VALUES
-(1, 'Gusde Ganteng', 'admin', '$2y$10$3moGs6pwdvnbz0ZAmpOzIeuoI3ezI3oDEYKyAdMnShAsva1L41sqO', 'admin', '2021-03-18 20:18:26', '2021-03-23 00:05:26'),
+(1, 'Admin SIKEPA', 'admin', '$2y$10$3moGs6pwdvnbz0ZAmpOzIeuoI3ezI3oDEYKyAdMnShAsva1L41sqO', 'admin', '2021-03-18 20:18:26', '2021-03-30 07:50:09'),
 (2, 'Ni Nyoman Berlianda', 'andak', '$2y$10$.JQA73IhwlvaecdeM1NHYOZasNwUTcHFbavnnluRA3eIA1d1XcTfC', 'operator', '2021-03-18 22:31:40', '2021-03-19 23:23:29');
 
 -- --------------------------------------------------------
@@ -258,7 +268,7 @@ ALTER TABLE `artikel`
 -- AUTO_INCREMENT for table `faq`
 --
 ALTER TABLE `faq`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `galeri`

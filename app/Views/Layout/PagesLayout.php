@@ -104,7 +104,8 @@
                                         <div class="form-group">
                                             <label for="password">Password</label>
                                             <input class="form-control form-control-sm input-sm" name="password"
-                                                id="inputsm" type="text" placeholder="Password" form="login" required>
+                                                id="inputsm" type="password" placeholder="Password" form="login"
+                                                required>
                                         </div>
                                         <div class="form-group">
                                             <button type="submit" style="width: 100%;" class="btn btn-primary btn-sm"
