@@ -9,6 +9,7 @@ use App\Models\StrukturModel;
 use App\Models\VisiModel;
 use App\Models\MisiModel;
 use App\Models\GaleriModel;
+use App\Models\FAQModel;
 
 class PagesController extends BaseController
 {
@@ -147,7 +148,15 @@ class PagesController extends BaseController
 
 	public function faq()
 	{
-		return view('Pages/FAQPages');
+        $faqModel = new FAQModel;
+
+        $faq = $faqModel->get()->getResultArray();
+
+        $data = [
+            'faq' => $faq
+        ];
+
+		return view('Pages/FAQPages', $data);
 	}
 	//======= End Halaman Sistem Informasi ========
 	
