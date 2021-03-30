@@ -52,6 +52,7 @@
                     <li><a href="/struktur-admin">Struktur Organisasi</a></li>
                     <li><a href="/pelayanan-admin">Pelayanan</a></li>
                     <li><a href="/artikel-admin">Artikel</a></li>
+                    <li><a href="/faq-admin">F.A.Q</a></li>
 
                     <li class="get-started"><a href="/logout">Logout</a>
                     </li>

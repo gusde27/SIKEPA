@@ -55,6 +55,7 @@ $routes->get('/pelayanan-admin', 'AdminController::pelayanan_admin', ['filter' =
 $routes->get('/artikel-admin', 'AdminController::artikel_admin', ['filter' => 'admin']);
 $routes->get('/struktur-admin', 'AdminController::struktur_admin', ['filter' => 'admin']);
 $routes->get('/home-admin', 'AdminController::home_admin', ['filter' => 'admin']);
+$routes->get('/faq-admin', 'AdminController::faq_admin', ['filter' => 'admin']);
 
 //POST ADMIN
 //Struktur CRUD
@@ -83,6 +84,11 @@ $routes->post('/operator_delete', 'AdminController::OperatorDelete', ['filter' =
 $routes->post('/pelayanan_tambah', 'AdminController::PelayananTambah', ['filter' => 'admin']); //create
 $routes->post('/pelayanan_update', 'AdminController::PelayananUpdate', ['filter' => 'admin']); //update
 $routes->post('/pelayanan_delete', 'AdminController::PelayananDelete', ['filter' => 'admin']); //delete
+
+//FAQ CRUD
+$routes->post('/faq_tambah', 'AdminController::FAQTambah', ['filter' => 'admin']); //create
+$routes->post('/faq_update', 'AdminController::FAQUpdate', ['filter' => 'admin']); //update
+$routes->post('/faq_delete', 'AdminController::FAQDelete', ['filter' => 'admin']); //delete
 
 //Artikel CRUD
 $routes->post('/artikel_tambah', 'AdminController::ArtikelTambah', ['filter' => 'admin']); //create

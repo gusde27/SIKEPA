@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2021 at 06:13 AM
+-- Generation Time: Mar 30, 2021 at 07:53 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -48,6 +48,64 @@ INSERT INTO `artikel` (`id`, `judul`, `deskripsi`, `gambar`, `slug`, `created_at
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `faq`
+--
+
+CREATE TABLE `faq` (
+  `id` int(100) NOT NULL,
+  `pertanyaan` varchar(1000) NOT NULL,
+  `jawaban` varchar(1000) NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `galeri`
+--
+
+CREATE TABLE `galeri` (
+  `id` int(100) NOT NULL,
+  `gambar` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `galeri`
+--
+
+INSERT INTO `galeri` (`id`, `gambar`, `created_at`, `updated_at`) VALUES
+(3, '1616988453_ccd837e98482554d8a75.png', '2021-03-28 22:27:33', '2021-03-28 22:27:33'),
+(4, '1616989408_0aa77d63cefa728f2b11.jpg', '2021-03-28 22:43:28', '2021-03-28 22:43:28');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `misi`
+--
+
+CREATE TABLE `misi` (
+  `id` int(100) NOT NULL,
+  `misi` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `misi`
+--
+
+INSERT INTO `misi` (`id`, `misi`, `created_at`, `updated_at`) VALUES
+(1, 'Mewujudkan masyarakat Kelurahan Pagesangan sebagai Kelurahan yang merupakan nama Ibu kota Mataram dan Nama Ibu Kota Provinsi NTB sebagai kota yang indah (MISI No 1).', '2021-03-28 09:50:50', '2021-03-28 09:51:20'),
+(2, 'Meningkatkan kualitas pelayanan publik berdasarkan prinsip tata pemerintahan yang baik dalam bentuk penataan administrasi, pemerintahan, pembangunan dan pelayanan (MISI No 2)', '2021-03-28 09:57:29', '2021-03-28 09:57:29'),
+(3, 'Mewujudkan masyarakat Kelurahan Pagesangan yang penduduknya haterogen untuk tetap memelihara keamanan, ketentraman, ketertiban dan kedamaian ditengah masyarakat dan saling berketerima ( toleransi ) yang dijiwai oleh nilai-nilai agama/religi dan kearifan l', '2021-03-28 09:57:45', '2021-03-28 09:57:45'),
+(4, ' Meningkatkan kwalitas SDM yang handal untuk mendorong daya saing daerah (MISI No 4)', '2021-03-28 09:57:58', '2021-03-28 09:57:58');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pelayanan`
 --
 
@@ -68,6 +126,26 @@ CREATE TABLE `pelayanan` (
 INSERT INTO `pelayanan` (`id`, `nama`, `syarat`, `deskripsi`, `slug`, `created_at`, `updated_at`) VALUES
 (1, 'Surat Keterangan Kelahiran dan Akta', 'KTP\r\nKK', 'Mantap', 'surat-keterangan-kelahiran-dan-akta', '2021-03-19 05:14:58', '2021-03-19 23:22:22'),
 (4, 'Surat Keterangan Rahasia', 'KTP\r\nKK', 'Nice', 'surat-keterangan-rahasia', '2021-03-19 23:22:44', '2021-03-19 23:22:44');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `struktur`
+--
+
+CREATE TABLE `struktur` (
+  `id` int(11) NOT NULL,
+  `isi` mediumtext NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `struktur`
+--
+
+INSERT INTO `struktur` (`id`, `isi`, `created_at`, `updated_at`) VALUES
+(2, 'Kantor Lurah Pagesangan dipimpin oleh seorang Lurah kemudian dibawahnya terdiri dari Seklur, Kasi Pemerintahan, Kasi Ekonomi, Fisik, Sarana dan Prasarana, Kasi Sosial dan Pemberdayaan Masyarakat serta staf. Jumlah Pegawai Kantor Lurah Pagesangan berjumlah 11 orang terdiri dari :\r\n\r\nLurah : 1 Orang\r\nSekretaris : 1 Orang\r\nKasi : 2 Orang\r\nStaf PNS : 2 Orang\r\nStaf Honorer : 3 Orang\r\nBabinmaspol : 1 Orang\r\nBabinsa : 1 Orang', NULL, '2021-03-26 10:26:49');
 
 -- --------------------------------------------------------
 
@@ -93,6 +171,27 @@ INSERT INTO `user` (`id`, `nama`, `username`, `password`, `level`, `created_at`,
 (1, 'Gusde Ganteng', 'admin', '$2y$10$3moGs6pwdvnbz0ZAmpOzIeuoI3ezI3oDEYKyAdMnShAsva1L41sqO', 'admin', '2021-03-18 20:18:26', '2021-03-23 00:05:26'),
 (2, 'Ni Nyoman Berlianda', 'andak', '$2y$10$.JQA73IhwlvaecdeM1NHYOZasNwUTcHFbavnnluRA3eIA1d1XcTfC', 'operator', '2021-03-18 22:31:40', '2021-03-19 23:23:29');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `visi`
+--
+
+CREATE TABLE `visi` (
+  `id` int(100) NOT NULL,
+  `visi` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `visi`
+--
+
+INSERT INTO `visi` (`id`, `visi`, `created_at`, `updated_at`) VALUES
+(1, 'Mewujudkan Kelurahan Pagesangan Yang Terang Benderang (VISI No 1).', '2021-03-28 09:26:09', '2021-03-28 09:32:21'),
+(2, 'Mataram Indah, tertata, Aman, Damai, Maju dan Religius (VISI No 2).', '2021-03-28 09:26:44', '2021-03-28 09:32:28');
+
 --
 -- Indexes for dumped tables
 --
@@ -104,15 +203,45 @@ ALTER TABLE `artikel`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `faq`
+--
+ALTER TABLE `faq`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `galeri`
+--
+ALTER TABLE `galeri`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `misi`
+--
+ALTER TABLE `misi`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `pelayanan`
 --
 ALTER TABLE `pelayanan`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `struktur`
+--
+ALTER TABLE `struktur`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `visi`
+--
+ALTER TABLE `visi`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -126,16 +255,46 @@ ALTER TABLE `artikel`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `faq`
+--
+ALTER TABLE `faq`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `galeri`
+--
+ALTER TABLE `galeri`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `misi`
+--
+ALTER TABLE `misi`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `pelayanan`
 --
 ALTER TABLE `pelayanan`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `struktur`
+--
+ALTER TABLE `struktur`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `visi`
+--
+ALTER TABLE `visi`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
