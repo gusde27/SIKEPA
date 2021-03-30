@@ -71,7 +71,7 @@
                                         <?= $no++; ?>
                                     </th>
                                     <td>
-                                        <?= $f['pertanyaaan']; ?>
+                                        <?= $f['pertanyaan']; ?>
                                     </td>
                                     <td>
                                         <button style="font-size: 12px;" type="button"

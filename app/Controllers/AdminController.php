@@ -47,6 +47,19 @@ class AdminController extends BaseController
 		return view('Admin/PelayananAdmin', $data);
 	}
 
+	public function faq_admin()
+	{
+        $faqModel = new FAQModel;
+
+        $faq = $faqModel->get()->getResultArray();
+
+        $data = [
+            'faq' => $faq
+        ];
+
+		return view('Admin/FAQAdmin', $data);
+	}
+
 	public function artikel_admin()
 	{
         $artikelModel = new ArtikelModel;
