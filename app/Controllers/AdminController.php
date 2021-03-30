@@ -11,6 +11,7 @@ use App\Models\StrukturModel;
 use App\Models\VisiModel;
 use App\Models\MisiModel;
 use App\Models\GaleriModel;
+use App\Models\FAQModel;
 
 class AdminController extends BaseController
 {
@@ -702,6 +703,85 @@ class AdminController extends BaseController
         return redirect()->to('home-admin');
     }
 	//======= END CRUD Galeri ========
+
+    //======= CRUD FAQ ========
+
+	//Create
+	public function FAQTambah()
+    {
+        $validation = \Config\Services::validation();
+        $request = \Config\Services::request(); //aktifkan request
+
+        if (!$this->validate([
+            'pertanyaan' => 'required',
+            'jawaban' => 'required'
+        ])) {
+
+            session()->setFlashdata('pesan', 'Data FAQ gagal ditambahkan!');
+
+            return redirect()->back();
+            return redirect()->to('faq-admin')->withInput()->with('validation', $validation);
+        }
+
+        $faqModel = new FAQModel();
+
+        $pertanyaan = $request->getVar('pertanyaan');
+        $jawaban = $request->getVar('jawaban');
+
+        $faqModel->save([
+            'pertanyaan' => $pertanyaan,
+            'jawaban' => $jawaban
+            ]);
+            
+        session()->setFlashdata('pesan', 'Data FAQ Berhasil ditambahkan!');
+        
+        return redirect()->back();
+        return redirect()->to('faq-admin');
+    }
+    
+    //Update
+    public function FAQUpdate()
+    {
+        $request = \Config\Services::request(); //aktifkan request
+        
+        $faqModel = new FAQModel();
+        
+        $pertanyaan = $request->getVar('pertanyaan');
+        $jawaban = $request->getVar('jawaban');
+        
+        $id_faq = $request->getVar('id_faq');
+        
+        $faqModel->save([
+                'id' => $id_faq,
+                'pertanyaan' => $pertanyaan,
+                'jawaban' => $jawaban
+        ]);
+    
+        session()->setFlashdata('pesan', 'Data FAQ Berhasil diubah!');
+    
+        return redirect()->back();
+        return redirect()->to('faq-admin');
+        
+    }
+
+    //Delete
+    public function FAQDelete()
+    {
+        $request = \Config\Services::request(); //aktifkan request
+
+        $faqModel = new FAQModel();
+
+        $id = $request->getVar('id_faq');
+
+        $faqModel->delete($id);
+
+        session()->setFlashdata('pesan', 'Data FAQ Berhasil dihapus');
+
+        return redirect()->back();
+        return redirect()->to('faq-admin');
+    }
+	//======= END CRUD FAQ ========
+
 
 
     
