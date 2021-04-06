@@ -28,7 +28,7 @@
 
             <p style="white-space: pre-line;">
                 <?php foreach($struktur as $s): ?>
-                <?= $s['isi'] ?>
+                <img class="img-fluid mb-3" src="assets/img/struktur/<?= $s['isi'] ?>" alt="Struktur Organisasi">
                 <?php endforeach; ?>
             </p>
 

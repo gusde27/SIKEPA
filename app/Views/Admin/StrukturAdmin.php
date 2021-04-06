@@ -39,14 +39,16 @@
                 <div class="card-body">
 
                     <!-- Text Area -->
-                    <form method="POST" action="/struktur_update" id="strukturUpdate">
+                    <form method="POST" action="/struktur_update" id="strukturUpdate" enctype="multipart/form-data">
                         <?php foreach($struktur as $s ) : ?>
                         <input type="text" name="id_struktur" value="<?= $s['id'] ?>" hidden="true">
-                        <div class="form-group">
-                            <textarea class="form-control form-control-sm input-sm" name="struktur" id="struktur"
-                                form="strukturUpdate" rows="15"><?= $s['isi'] ?></textarea>
-                        </div>
+                        <img class="img-fluid mb-3" src="assets/img/struktur/<?= $s['isi'] ?>"
+                            alt="Struktur Organisasi">
                         <?php endforeach; ?>
+                        <div class="form-group">
+                            <input type="file" accept="image/x-png,image/jpg,image/jpeg"
+                                class="form-control-file input-sm" id="gambar" name="gambar" form="strukturUpdate">
+                        </div>
                         <button type="submit" style="width: 100%;" form="strukturUpdate"
                             class="btn btn-primary btn-sm">Update</button>
                     </form>

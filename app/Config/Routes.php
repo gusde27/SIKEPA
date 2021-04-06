@@ -37,6 +37,7 @@ $routes->setAutoRoute(true);
 $routes->get('/back', 'PagesController::back');
 
 // Login/Logout
+$routes->get('/login', 'PagesController::Login');
 $routes->post('/loginpost', 'PagesController::LoginPost');
 $routes->get('/logout', 'PagesController::Logout');
 

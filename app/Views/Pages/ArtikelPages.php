@@ -34,7 +34,7 @@
                             <div class="col-md-2">
                                 <div class="card">
                                     <div class="card-body p-1">
-                                        <img src="assets/img/artikel/<?= $a['gambar'] ?>" width="100%">
+                                        <img src="assets/img/artikel/<?= $a['gambar'] ?>" class="img-fluid">
                                     </div>
                                 </div>
                             </div>

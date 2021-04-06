@@ -34,7 +34,7 @@
 <body>
 
     <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top  header-transparent ">
+    <header id="header" class="header-transparent mb-3">
         <div class="container d-flex align-items-center">
 
             <div class="logo mr-auto">
@@ -54,83 +54,58 @@
                     <!--
                     <li class="get-started"><a href="#login" data-toggle="modal" data-target="#LoginModal">Masuk</a>
                     </li>
-                     -->
+                    -->
                 </ul>
             </nav><!-- .nav-menu -->
 
         </div>
     </header><!-- End Header -->
 
-    <!-- ======= Login Modal ======= -->
 
-    <!-- Modal -->
-    <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-        aria-hidden="true">
-        <div class="vertical-alignment-helper">
-            <div class="modal-dialog vertical-align-center" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5>ADMIN SIKEPA</h5>
-                        <button type="button btn-sm" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+    <!-- ======= Main ======= -->
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <img src="<?= base_url('assets/img/logo-mataram.png') ?>" alt="Logo Kota Mataram" width="100%">
                     </div>
-                    <!-- Isi Modal -->
-                    <div class="modal-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-sm-5">
-                                    <img src="<?= base_url('assets/img/logo-mataram.png') ?>" alt="Logo Kota Mataram"
-                                        width="100%">
-                                </div>
-                                <div class="col-sm-7">
+                    <div class="col-sm-10">
 
-                                    <!-- alert -->
-                                    <?php if (session()->getFlashdata('pesan')) : ?>
-                                    <div class="alert alert-primary alert-dismissible fade show"
-                                        style="font-size: 12px;" role="alert">
-                                        <?= session()->getFlashdata('pesan'); ?>
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <?php endif; ?>
-                                    <!-- end alert -->
-
-                                    <form action="/loginpost" method="POST" id="login">
-                                        <div class="form-group">
-                                            <label for="username">Username</label>
-                                            <input class="form-control form-control-sm input-sm" name="username"
-                                                id="inputsm" type="text" placeholder="Username" form="login" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="password">Password</label>
-                                            <input class="form-control form-control-sm input-sm" name="password"
-                                                id="inputsm" type="password" placeholder="Password" form="login"
-                                                required>
-                                        </div>
-                                        <div class="form-group">
-                                            <button type="submit" style="width: 100%;" class="btn btn-primary btn-sm"
-                                                form="login">Login</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
+                        <!-- alert -->
+                        <?php if (session()->getFlashdata('pesan')) : ?>
+                        <div class="alert alert-primary alert-dismissible fade show" style="font-size: 12px;"
+                            role="alert">
+                            <?= session()->getFlashdata('pesan'); ?>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                    </div>
-                    <!-- End Isi Modal -->
+                        <?php endif; ?>
+                        <!-- end alert -->
 
-                    <div class="modal-footer">
-                        <!-- isi footer -->
+                        <form action="/loginpost" method="POST" id="login">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input class="form-control form-control-sm input-sm" name="username" id="inputsm"
+                                    type="text" placeholder="Username" form="login" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input class="form-control form-control-sm input-sm" name="password" id="inputsm"
+                                    type="password" placeholder="Password" form="login" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" style="width: 100%;" class="btn btn-primary btn-sm"
+                                    form="login">Login</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- ======= End Login Modal ======= -->
 
-    <!-- ======= Main ======= -->
-    <?php $this->renderSection('content') ?>
+    </div>
     <!-- ======= End Main ======= -->
 
     <!-- ======= Footer ======= -->

@@ -120,6 +120,11 @@ class PagesController extends BaseController
 		return view('Pages/PelayananPages', $data);
 	}
 
+	public function Login()
+	{
+		return view('Pages/LoginPages');
+	}
+
 	public function artikel()
 	{
 		$artikelModel = new ArtikelModel;

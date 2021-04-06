@@ -492,18 +492,31 @@ class AdminController extends BaseController
 
         $id_struktur = $request->getVar('id_struktur');
 
-        $struktur = $request->getVar('struktur');
+        $struktur = $request->getFile('gambar');
+        
+        if($struktur != ''){
+        //$nama_galeri = $galeri->getRandomName();
+
+        $nama_struktur = 'Gambar_Struktur' . "." . $struktur->getExtension();
+        
+        $struktur->move("assets/img/struktur", $nama_struktur, true);
 
         
         $strukturModel->save([
             'id' => $id_struktur,
-            'isi' => $struktur
+            'isi' => $nama_struktur
             ]);
             
         session()->setFlashdata('pesan', 'Data Struktur Berhasil diubah!');
         
         return redirect()->back();
         return redirect()->to('struktur-admin');
+        } else {
+        session()->setFlashdata('pesan', 'Data Struktur Gagal diubah!');
+        
+        return redirect()->back();
+        return redirect()->to('struktur-admin');
+        }
         
     }
 

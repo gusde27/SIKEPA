@@ -39,8 +39,10 @@
                             <div class="mx-auto">
                                 <div class="card">
                                     <div class="card-body p-1">
-                                        <img class="img-fluid"
-                                            src="<?= base_url('assets/img/artikel/' . $a['gambar'] . '') ?>">
+                                        <center>
+                                            <img class="img-fluid"
+                                                src="<?= base_url('assets/img/artikel/' . $a['gambar'] . '') ?>">
+                                        </center>
                                     </div>
                                 </div>
                             </div>
