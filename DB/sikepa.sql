@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2021 at 03:10 PM
+-- Generation Time: Apr 06, 2021 at 11:06 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -155,7 +155,7 @@ CREATE TABLE `struktur` (
 --
 
 INSERT INTO `struktur` (`id`, `isi`, `created_at`, `updated_at`) VALUES
-(2, 'Kantor Lurah Pagesangan dipimpin oleh seorang Lurah kemudian dibawahnya terdiri dari Seklur, Kasi Pemerintahan, Kasi Ekonomi, Fisik, Sarana dan Prasarana, Kasi Sosial dan Pemberdayaan Masyarakat serta staf. Jumlah Pegawai Kantor Lurah Pagesangan berjumlah 11 orang terdiri dari :\r\n\r\nLurah : 1 Orang\r\nSekretaris : 1 Orang\r\nKasi : 2 Orang\r\nStaf PNS : 2 Orang\r\nStaf Honorer : 3 Orang\r\nBabinmaspol : 1 Orang\r\nBabinsa : 1 Orang', NULL, '2021-03-26 10:26:49');
+(2, 'Gambar_Struktur.jpg', NULL, '2021-04-06 03:35:10');
 
 -- --------------------------------------------------------
 
