@@ -51,7 +51,7 @@
                     <!-- end modal tambah operator -->
 
                     <!-- Tables Operator -->
-                    <div class="table-responsive" style="font-size: 14px;">
+                    <div class="table-responsive" style="font-size: 13px;">
                         <table id="datalol" class="table table-striped table-bordered mt-3" style="color:black;">
                             <thead>
                                 <tr>
