@@ -119,7 +119,7 @@ class PagesController extends BaseController
 
 		return view('Pages/PelayananPages', $data);
 	}
-
+    //fungsi login
 	public function Login()
 	{
 		return view('Pages/LoginPages');
